@@ -355,7 +355,7 @@ The sum is over edges in $G_{\text{info}}$ with $d(i,j) \leq r$, where $r \propt
 
 #### F.2 Equations of Motion
 
-Vary $S_G$ with respect to $P_i = (t_i, s_{i,1}, s_{i,2}, s_{i,3})$:$$\sum_{j \in N_i} I(X_i; X_j) (P_i - P_j) = -\nabla_{P_i} E(X_i)$$
+Vary $S_G$ with respect to $P_i = (t_i, s_{i,1}, s_{i,2}, s_{i,3})$ : $$\sum_{j \in N_i} I(X_i; X_j) (P_i - P_j) = -\nabla_{P_i} E(X_i)$$
 
 #### F.3 Continuum Limit
 
@@ -414,5 +414,7 @@ From distinctions alone, the universe weaves its geometry and dynamics—one irr
 ## References
 
 Awodey, S. (2010). *Category Theory*. Oxford University Press.
+
 Barwise, J., Seligman, J. (1997). *Information Flow*. Cambridge University Press.
+
 Bloom, G.S., Golomb, S.W. (1977). Applications of Numbered Undirected Graphs. *IEEE Proceedings, 65*(4), 562–570.
