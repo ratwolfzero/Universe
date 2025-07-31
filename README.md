@@ -360,7 +360,7 @@ $$\sum_{j \in N_i} I(X_i; X_j) (P_i - P_j) = -\nabla_{P_i} E(X_i)$$
 
 #### F.3 Continuum Limit
 
-As $n \to \infty$, the graph approximates a 4D manifold with metric:$$g_{\mu\nu}(x) = \lim_{R \to \ell_{\text{info}}} \frac{1}{N_R} \sum_{\langle i,j \rangle \in B_R(x)} \Delta P_i^\mu \Delta P_j^\nu I(X_i; X_j)$$The action converges to:$$S_G \to \int \sqrt{-g} (R + 2\Lambda_{\text{info}}) , d^4x$$where $\Lambda_{\text{info}} \propto \ell_{\text{info}}^{-2}$.
+As $n \to \infty$, the graph approximates a 4D manifold with metric: $$g_{\mu\nu}(x) = \lim_{R \to \ell_{\text{info}}} \frac{1}{N_R} \sum_{\langle i,j \rangle \in B_R(x)} \Delta P_i^\mu \Delta P_j^\nu I(X_i; X_j)$$ The action converges to: $$S_G \to \int \sqrt{-g} (R + 2\Lambda_{\text{info}}) , d^4x$$where $\Lambda_{\text{info}} \propto \ell_{\text{info}}^{-2}$.
 **Physical Interpretation:** The dynamics resemble geodesic motion in general relativity.
 
 ### Appendix G: Quantum Structure from Informational Contingency
