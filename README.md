@@ -315,7 +315,7 @@ This extension builds on Appendix D, where 4D spacetime emerges from a combinato
 
 #### E.1 Defining the Informational Scale $\ell_{\text{info}}$
 
-Axiom VII defines a pseudometric over distinctions:$$d(i,j) = \frac{1}{1 + I(X_i; X_j)}, \quad I(X_i; X_j) = \log \left(1 + \frac{1}{d_{ij}}\right), \quad d_{ij} = \frac{|x_i - x_j|}{\langle |x_k - x_l| \rangle}$$As the number of distinctions $n$ grows, the minimal distance $d_{\min}^{(n)} = \min_{i \neq j} d(i,j)$ decreases. The informational scale is:$$\ell_{\text{info}} = \frac{1}{1 + \log n}$$
+Axiom VII defines a pseudometric over distinctions: $$d(i,j) = \frac{1}{1 + I(X_i; X_j)}, \quad I(X_i; X_j) = \log \left(1 + \frac{1}{d_{ij}}\right), \quad d_{ij} = \frac{|x_i - x_j|}{\langle |x_k - x_l| \rangle}$$ As the number of distinctions $n$ grows, the minimal distance $d_{\min}^{(n)} = \min_{i \neq j} d(i,j)$ decreases. The informational scale is:$$\ell_{\text{info}} = \frac{1}{1 + \log n}$$
 **Derivation:**
 
 * The entropy is $S_n = \binom{n}{2}$.
