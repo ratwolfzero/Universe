@@ -187,7 +187,7 @@ We now prove that such an $m$ exists, is unique, and that $G_{n+1}$ is again a G
 #### A.1 Lemma — Existence of $m$
 
 **Statement:** Given a Golomb ruler $G_n$, there always exists a natural number
-$$m > \max(G_n)$$such that$$|m - g| \notin D(G_n) \quad \text{for all } g \in G_n.$$
+$$m > \max(G_n)$$ such that $$|m - g| \notin D(G_n) \quad \text{for all } g \in G_n.$$
 **Proof:** Let $M = \max(G_n)$. We are looking for some $m > M$ such that none of the new differences $|m - g|$ (with $g \in G_n$) are already in $D(G_n)$.
 Note that:
 
