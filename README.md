@@ -396,10 +396,16 @@ Curvature fluctuations:$$\lambda_k \sim \frac{1}{\ell_{\text{info}}^2} \cdot \le
 | Thermodynamics     | Medium   | Relate S_n to statistical entropy and the second law, including deriving I_n from Shannon’s definition $(I(X;Y) = H(X) + H(Y) - H(X,Y))$ | III        | Establish thermodynamic consistency and refine informational structure |
 | Simulations        | Low      | Simulate $G_{\text{info}}$ growth and validate transitions, noting heuristic gaps (e.g., $I_n, \ell_{\text{info}})$ | VII        | Validate predictions computationally and enhance transparency |
 
-### Appendix J: Conclusion (Part II)
+### Appendix J: Conclusion (Part II, Appendix E -I)
 
 This axiomatic framework derives spacetime, curvature, and quantum structure from informational principles, with $\ell_{\text{info}}$ as the fundamental scale. The approach maintains the Golomb Universe’s minimalism while offering testable predictions, paving the way for a unified theory of quantum gravity.
 From distinctions alone, the universe weaves its geometry and dynamics—one irreducible difference at a time.
+
+---
+
+> The close functional alignment between the axiomatic mutual information $I_n(i,j) = \log\left(1 + \frac{1}{d_{ij}} \right)$ and standard probabilistic decay models (Figure J.1) reinforces a central insight of this framework: **deterministic informational structure can naturally reproduce behaviors typically attributed to stochastic systems**. Specifically, mutual information — often treated as inherently probabilistic — emerges here as a **purely structural function of distinction distance** in a minimal, rule-based universe. This suggests that laws grounded in probability, such as those found in quantum theory or statistical mechanics, may be **emergent signatures of deeper combinatorial architectures**. While formal Shannon entropy requires probabilistic state assumptions incompatible with the Golomb Universe’s foundational minimalism, the observed decay in $I_n$ over normalized distinction distance mirrors the expected decay of mutual information in statistical ensembles. This alignment supports the view that **probability is not a primitive feature of reality**, but a **macroscopic manifestation of informational inaccessibility or coarse-graining** within an underlying deterministic substrate built entirely from irreducible distinctions.
+
+> *Figure J.1 — Functional comparison between the axiomatic mutual information $I_n(i,j) = \log(1 + 1/d_{ij})$, derived from deterministic distinction structure, and best-fit inverse power law and exponential decay models typical of probabilistic systems. Despite involving no probabilistic assumptions, the axiomatic curve closely tracks both fits across all ranges of normalized distinction distances, suggesting that familiar information-theoretic behaviors can emerge from fundamentally non-statistical foundations.*
 
 ---
 
