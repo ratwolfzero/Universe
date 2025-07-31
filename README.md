@@ -303,7 +303,7 @@ The third spatial dimension emerges when the informational complexity requires a
 
 The final structure synthesizes the emergent 3D spatial manifold with the 1D temporal continuum.
 
-* Each distinction $X_i$ is an event in the 4D manifold with position:$$P_i = (t_i, s_{i,1}, s_{i,2}, s_{i,3})$$
+* Each distinction $X_i$ is an event in the 4D manifold with position: $$P_i = (t_i, s_{i,1}, s_{i,2}, s_{i,3})$$
 * The temporal coordinate $t_i$ is the discrete integer from the Golomb ruler.
 * The spatial coordinates $(s_{i,1}, s_{i,2}, s_{i,3})$ are continuous values derived from the spectral embedding.
 
