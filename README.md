@@ -346,7 +346,7 @@ Define: $$E_n = \sum_{i < j} \left( \frac{1}{d(i,j)^2} - \frac{1}{\ell_{\text{in
 
 #### F.1 Discrete Action Functional
 
-Define:$$S_G = \sum_{\langle i,j \rangle} I(X_i; X_j) \cdot d(i,j)^2 + \sum_i E(X_i)$$where:
+Define: $$S_G = \sum_{\langle i,j \rangle} I(X_i; X_j) \cdot d(i,j)^2 + \sum_i E(X_i)$$ where:
 
 * $d(i,j) = \frac{1}{1 + I(X_i; X_j)}$.
 * $E(X_i) = \sum_{j \in N_i} \log \left(1 + \frac{|t_i - t_j|}{d(i,j)}\right)$.
