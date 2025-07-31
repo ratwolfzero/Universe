@@ -372,7 +372,7 @@ Define a state space: $$\Psi(X_i) = \mathbb{C}^{|N_i|}, \quad \langle X_j | f | 
 
 #### G.2 Emergent Uncertainty Principle
 
-Positional uncertainty: $$\Delta x_i \sim d_{\min}^{(n)} = \min_{j \in N_i} \frac{1}{1 + I(X_i; X_j)}$$ Momentum-like uncertainty: $$\Delta p_i \sim \frac{\partial E_n}{\partial d_{\min}^{(n)}} \approx \frac{2}{(d_{\min}^{(n)})^3}$$ Uncertainty product: $$\Delta x_i \Delta p_i \sim \frac{2}{(d_{\min}^{(n)})^2}$$When $d_{\min}^{(n)} \to \ell_{\text{info}}$$: $$\Delta x_i \Delta p_i \sim \ell_{\text{info}}^{-2}$$
+Positional uncertainty: $$\Delta x_i \sim d_{\min}^{(n)} = \min_{j \in N_i} \frac{1}{1 + I(X_i; X_j)}$$ Momentum-like uncertainty: $$\Delta p_i \sim \frac{\partial E_n}{\partial d_{\min}^{(n)}} \approx \frac{2}{(d_{\min}^{(n)})^3}$$ Uncertainty product: $$\Delta x_i \Delta p_i \sim \frac{2}{(d_{\min}^{(n)})^2}$$ When $d_{\min}^{(n)} \to \ell_{\text{info}}$: $$\Delta x_i \Delta p_i \sim \ell_{\text{info}}^{-2}$$
 **Physical Interpretation:** This resembles the Heisenberg uncertainty principle.
 
 ### Appendix H: Experimental Signatures
