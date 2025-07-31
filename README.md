@@ -326,7 +326,7 @@ Axiom VII defines a pseudometric over distinctions: $$d(i,j) = \frac{1}{1 + I(X_
 
 #### E.2 Informational Curvature and Dimensional Bifurcation
 
-Define an informational scalar curvature:$$R_n = \frac{1}{\ell_{\text{info}}^2} \left(1 - \frac{d_{\min}^{(n)}}{\ell_{\text{info}}}\right)$$
+Define an informational scalar curvature: $$R_n = \frac{1}{\ell_{\text{info}}^2} \left(1 - \frac{d_{\min}^{(n)}}{\ell_{\text{info}}}\right)$$
 **Theorem E.1:** When $R_n \geq \ell_{\text{info}}^{-2}$, the distinction graph requires a higher-dimensional embedding.
 **Proof:**
 
@@ -360,7 +360,7 @@ $$\sum_{j \in N_i} I(X_i; X_j) (P_i - P_j) = -\nabla_{P_i} E(X_i)$$
 
 #### F.3 Continuum Limit
 
-As $n \to \infty$, the graph approximates a 4D manifold with metric: $$g_{\mu\nu}(x) = \lim_{R \to \ell_{\text{info}}} \frac{1}{N_R} \sum_{\langle i,j \rangle \in B_R(x)} \Delta P_i^\mu \Delta P_j^\nu I(X_i; X_j)$$ The action converges to: $$S_G \to \int \sqrt{-g} (R + 2\Lambda_{\text{info}}) , d^4x$$where $\Lambda_{\text{info}} \propto \ell_{\text{info}}^{-2}$.
+As $n \to \infty$, the graph approximates a 4D manifold with metric: $$g_{\mu\nu}(x) = \lim_{R \to \ell_{\text{info}}} \frac{1}{N_R} \sum_{\langle i,j \rangle \in B_R(x)} \Delta P_i^\mu \Delta P_j^\nu I(X_i; X_j)$$ The action converges to: $$S_G \to \int \sqrt{-g} (R + 2\Lambda_{\text{info}}) , d^4x$$ where $\Lambda_{\text{info}} \propto \ell_{\text{info}}^{-2}$.
 **Physical Interpretation:** The dynamics resemble geodesic motion in general relativity.
 
 ### Appendix G: Quantum Structure from Informational Contingency
