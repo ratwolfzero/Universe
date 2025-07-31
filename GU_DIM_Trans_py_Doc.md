@@ -194,7 +194,7 @@ Example: `Progress: n=100, d_min=0.099, l_info=0.178, R_n=2.496` (every 100 step
 
 #### Summary Table
 
-```text
+```
 Summary of Essential Calculated Values:
 ----------------------------------------------------------------------
     n |    d_min |    l_info |        R_n |    λ₂/λ₁ |    λ₃/λ₂ |    λ₄/λ₃ |    λ₅/λ₄
@@ -219,7 +219,7 @@ R_n: 3.001 (> 3.0)
 Energy Functional: 3044455.237 (>= 0)
 Spectral Gaps: λ₁=83.894, Δλ₂=16.585, Δλ₃=4.262, Δλ₄=3.221, Δλ₅=3.503
 Distortion: 0.797
-```text
+```
 
 ### Graphical Output
 
