@@ -219,6 +219,7 @@ R_n: 3.001 (> 3.0)
 Energy Functional: 3044455.237 (>= 0)
 Spectral Gaps: λ₁=83.894, Δλ₂=16.585, Δλ₃=4.262, Δλ₄=3.221, Δλ₅=3.503
 Distortion: 0.797
+```text
 
 ### Graphical Output
 
