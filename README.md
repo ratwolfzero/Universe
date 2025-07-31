@@ -173,7 +173,7 @@ The following appendices provide supporting context and detailed derivations. Ap
 ### Appendix A: Formal Proof of the Growth Rule
 
 Let
-$$G_n = {g_0, g_1, \ldots, g_{n-1}}$$be a set of $n$ distinct natural numbers, ordered such that$$g_0 < g_1 < \cdots < g_{n-1}.$$Define$$D(G_n) = {|g_i - g_j| \mid g_i, g_j \in G_n,\ i \ne j}$$
+$$G_n = {g_0, g_1, \ldots, g_{n-1}}$$ be a set of $n$ distinct natural numbers, ordered such that $$g_0 < g_1 < \cdots < g_{n-1}.$$ Define $$D(G_n) = {|g_i - g_j| \mid g_i, g_j \in G_n,\ i \ne j}$$
 as the set of all pairwise absolute differences within $G_n$. Assume that all elements in $D(G_n)$ are unique — i.e., $G_n$ is a Golomb ruler of size $n$.
 
 **Growth Rule**
