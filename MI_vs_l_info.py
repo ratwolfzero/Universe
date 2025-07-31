@@ -105,8 +105,9 @@ def create_final_visualization(n=200):
     ax.tick_params(axis='both', which='major', labelsize=10)
     
     plt.tight_layout()
-    plt.savefig('Figure_x_final.png', dpi=300, bbox_inches='tight')
-    plt.close()
+    #plt.savefig('Figure_x_final.png', dpi=300, bbox_inches='tight')
+    #plt.close()
+    plt.show()
     
     # Verification output
     print("\n" + "="*60)
@@ -123,4 +124,4 @@ def create_final_visualization(n=200):
 
 # --- Execution ---
 if __name__ == "__main__":
-    create_final_visualization(n=1000)
+    create_final_visualization(n=500)
