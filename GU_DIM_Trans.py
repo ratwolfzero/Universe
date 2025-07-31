@@ -2,7 +2,8 @@ import numpy as np
 from scipy.linalg import eigh
 from numba import njit
 import matplotlib.pyplot as plt
-from mpl_toolkits.mplot3d import Axes3D
+#from mpl_toolkits.mplot3d import Axes3D
+from tqdm import tqdm  # Import for progress bars
 
 @njit
 def generate_golomb(n: int) -> np.ndarray:
@@ -286,24 +287,29 @@ def plot_results(G_full, results, metrics_history):
 def print_summary(results, metrics_history):
     """Print a summary table of essential calculated values."""
     ns, d_mins, l_infos, R_ns, r1s, r2s, r3s, r4s = metrics_history
+
     print("\nSummary of Essential Calculated Values:")
-    print("-" * 70)
-    print(f"{'n':>5} | {'d_min':>8} | {'l_info':>8} | {'R_n':>8} | {'λ₂/λ₁':>8} | {'λ₃/λ₂':>8} | {'λ₄/λ₃':>8} | {'λ₅/λ₄':>8}")
-    print("-" * 70)                             
+    print("-" * 105)
+    print(f"{'n':>5} | {'d_min':>8} | {'l_info':>8} | {'R_n':>8} | "
+          f"{'λ₂/λ₁':>8} | {'λ₃/λ₂':>8} | {'λ₄/λ₃':>8} | {'λ₅/λ₄':>8} | {'Note'}")
+    print("-" * 105)
+
+    def print_row(idx, note):
+        print(f"{ns[idx]:>5} | {d_mins[idx]:>8.3f} | {l_infos[idx]:>8.3f} | {R_ns[idx]:>8.3f} | "
+              f"{r1s[idx]:>8.3f} | {r2s[idx]:>8.3f} | {r3s[idx]:>8.3f} | {r4s[idx]:>8.3f} | {note}")
+
     if results["2D"] is not None:
-        idx = results["2D"] - 1
-        print(f"{ns[idx]:>5} | {d_mins[idx]:>8.3f} | {l_infos[idx]:>8.3f} | {R_ns[idx]:>8.3f} | {r1s[idx]:>8.3f} | {r2s[idx]:>8.3f} | {r3s[idx]:>8.3f} | {r4s[idx]:>8.3f} (2D Transition)")
+        print_row(results["2D"] - 1, "2D Transition")
     if results["3D"] is not None:
-        idx = results["3D"] - 1
-        print(f"{ns[idx]:>5} | {d_mins[idx]:>8.3f} | {l_infos[idx]:>8.3f} | {R_ns[idx]:>8.3f} | {r1s[idx]:>8.3f} | {r2s[idx]:>8.3f} | {r3s[idx]:>8.3f} | {r4s[idx]:>8.3f} (3D Transition)")
+        print_row(results["3D"] - 1, "3D Transition")
     if results["4D"] is not None:
-        idx = results["4D"] - 1
-        print(f"{ns[idx]:>5} | {d_mins[idx]:>8.3f} | {l_infos[idx]:>8.3f} | {R_ns[idx]:>8.3f} | {r1s[idx]:>8.3f} | {r2s[idx]:>8.3f} | {r3s[idx]:>8.3f} | {r4s[idx]:>8.3f} (4D Spacetime)")
+        print_row(results["4D"] - 1, "4D Spacetime")
     if results["5D"] is not None:
-        idx = results["5D"] - 1
-        print(f"{ns[idx]:>5} | {d_mins[idx]:>8.3f} | {l_infos[idx]:>8.3f} | {R_ns[idx]:>8.3f} | {r1s[idx]:>8.3f} | {r2s[idx]:>8.3f} | {r3s[idx]:>8.3f} | {r4s[idx]:>8.3f} (5D Transition)")
-    idx = len(ns) - 1
-    print(f"{ns[idx]:>5} | {d_mins[idx]:>8.3f} | {l_infos[idx]:>8.3f} | {R_ns[idx]:>8.3f} | {r1s[idx]:>8.3f} | {r2s[idx]:>8.3f} | {r3s[idx]:>8.3f} | {r4s[idx]:>8.3f} (Final)")
+        print_row(results["5D"] - 1, "5D Transition")
+
+    # Always print the final step
+    print_row(len(ns) - 1, "Final Step")
+    print("-" * 105)
 
 def print_validation(G, results):
     """Print validation parameters to confirm compliance with the framework."""
@@ -379,47 +385,57 @@ def print_validation(G, results):
 
     print("NOTE: W (I_n) is heuristic; a Shannon derivation may adjust dimensional transitions (Appendix I, Thermodynamics).")
 
-from tqdm import tqdm  # Import for progress bars
-
 def simulate(n_max):                              
     """Simulation with 3D spatial embedding and 4D spacetime embedding."""
     results = {"2D": None, "3D": None, "4D": None, "5D": None}
     
-    # Just a simple message without progress bar
     print("Generating Golomb ruler...")
     G_full = generate_golomb(n_max)
 
-    ns, d_mins, l_infos, R_ns, r1s, r2s, r3s, r4s = [], [], [], [], [], [], [], []
-    
-    # Progress bar for simulation calculations
+    ns, d_mins, l_infos, R_ns = [], [], [], []
+    r1s, r2s, r3s, r4s = [], [], [], []
+
     print("Running simulation calculations...")
-    for n in tqdm(range(1, n_max + 1), desc="Simulation", bar_format='{l_bar}{bar}| {n_fmt}/{total_fmt} [{elapsed}<{remaining}]', unit=" steps"):
-        G = G_full[:n]
-        d_min, l_info, R_n, _ = compute_metrics(G)
-        t2d, t3d, t4d, t5d, r1, r2, r3, r4 = check_transitions(G, d_min, l_info, R_n)
-        ns.append(n)
-        d_mins.append(d_min)
-        l_infos.append(l_info)
-        R_ns.append(R_n)
-        r1s.append(r1)
-        r2s.append(r2)
-        r3s.append(r3)
-        r4s.append(r4)
-        if t2d and results["2D"] is None:
-            results["2D"] = n
-        if t3d and results["2D"] is not None and results["3D"] is None:
-            results["3D"] = n
-        if t4d and results["3D"] is not None and results["4D"] is None:
-            results["4D"] = n
-        if t5d and results["4D"] is not None and results["5D"] is None:
-            results["5D"] = n
-        if n % 100 == 0:
-            print(f"Progress: n={n}, d_min={d_min:.3f}, l_info={l_info:.3f}, R_n={R_n:.3f}")
-    
+    with tqdm(range(1, n_max + 1), 
+              desc="Simulation", 
+              bar_format='{l_bar}{bar}| {n_fmt}/{total_fmt} [{elapsed}<{remaining}]', 
+              unit=" steps") as pbar:
+        for n in pbar:
+            G = G_full[:n]
+            d_min, l_info, R_n, _ = compute_metrics(G)
+            t2d, t3d, t4d, t5d, r1, r2, r3, r4 = check_transitions(G, d_min, l_info, R_n)
+
+            # Accumulate results
+            ns.append(n)
+            d_mins.append(d_min)
+            l_infos.append(l_info)
+            R_ns.append(R_n)
+            r1s.append(r1)
+            r2s.append(r2)
+            r3s.append(r3)
+            r4s.append(r4)
+
+            # Detect transitions
+            if t2d and results["2D"] is None:
+                results["2D"] = n
+            if t3d and results["2D"] is not None and results["3D"] is None:
+                results["3D"] = n
+            if t4d and results["3D"] is not None and results["4D"] is None:
+                results["4D"] = n
+            if t5d and results["4D"] is not None and results["5D"] is None:
+                results["5D"] = n
+
+            # Log periodic updates without disrupting the progress bar
+            if n % 100 == 0 or n == n_max:
+                tqdm.write(f"Progress: n={n}, d_min={d_min:.3f}, l_info={l_info:.3f}, R_n={R_n:.3f}")
+
+    # Plot and print summaries
     plot_results(G_full, results, (ns, d_mins, l_infos, R_ns, r1s, r2s, r3s, r4s))
     print_summary(results, (ns, d_mins, l_infos, R_ns, r1s, r2s, r3s, r4s))
     print_validation(G_full, results)
+    
     return results
+
 
 
 # Run simulation
