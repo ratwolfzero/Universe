@@ -408,7 +408,7 @@ From distinctions alone, the universe weaves its geometry and dynamics—one irr
 > *Figure J.1 — Functional comparison between the axiomatic mutual information $I_n(i,j) = \log(1 + 1/d_{ij})$, derived from deterministic distinction structure, and best-fit inverse power law and exponential decay models typical of probabilistic systems. Despite involving no probabilistic assumptions, the axiomatic curve closely tracks both fits across all ranges of normalized distinction distances, suggesting that familiar information-theoretic behaviors can emerge from fundamentally non-statistical foundations.*
 
 **Figure J.1**
-![Figure J.1](./Figure_J.1.png)
+![Figure J.1](./Documentation/Figure_J.1.png)
 
 ---
 
