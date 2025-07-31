@@ -339,7 +339,7 @@ Define an informational scalar curvature:$$R_n = \frac{1}{\ell_{\text{info}}^2} 
 
 #### E.3 Informational Energy Functional
 
-Define:$$E_n = \sum_{i < j} \left( \frac{1}{d(i,j)^2} - \frac{1}{\ell_{\text{info}}^2} \right)$$When $d(i,j) \to \ell_{\text{info}}$, $E_n$ diverges, signaling a higher-dimensional embedding. In 3D, $d(i,j) \sim n^{-1/3}$, stabilizing $E_n$.
+Define: $$E_n = \sum_{i < j} \left( \frac{1}{d(i,j)^2} - \frac{1}{\ell_{\text{info}}^2} \right)$$ When $d(i,j) \to \ell_{\text{info}}$, $E_n$ diverges, signaling a higher-dimensional embedding. In 3D, $d(i,j) \sim n^{-1/3}$, stabilizing $E_n$.
 **Physical Interpretation:** $E_n$ drives the system toward a 3D structure to maintain resolvable distinctions.
 
 ### Appendix F: Spacetime Dynamics via Informational Action
