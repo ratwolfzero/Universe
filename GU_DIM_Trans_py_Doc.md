@@ -227,7 +227,7 @@ Distortion: 0.797
 
 #### `golomb_ruler_growth.png`
 
-![Ruler](./golomb_ruler_growth.png)
+![Ruler](./Documentation/golomb_ruler_growth.png)
 
 **Caption**: Line plot of Golomb ruler marks ($G[n]$) vs. index $n$, representing the temporal coordinate $t\_i$ (Appendix D.4).
 **Purpose**: Highlights the monotonic, exponential-like growth of $t\_i$, essential for the 3D→4D spacetime transition.
