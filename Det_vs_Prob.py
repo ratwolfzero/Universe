@@ -5,6 +5,7 @@ from sklearn.metrics import r2_score
 
 # --- 1. Generate Greedy Golomb Ruler ---
 
+
 def generate_greedy_golomb_ruler(n_elements):
     if n_elements <= 0:
         return []
@@ -30,11 +31,12 @@ def generate_greedy_golomb_ruler(n_elements):
 
 # --- 2. Compute Normalized Distinction Distances and Axiomatic MI ---
 
+
 def calculate_d_ij(golomb_ruler):
     all_raw_diffs = [abs(golomb_ruler[i] - golomb_ruler[j])
                      for i in range(len(golomb_ruler))
                      for j in range(i + 1, len(golomb_ruler))]
-    
+
     raw_diffs_array = np.array(all_raw_diffs)
     avg_raw_diff = np.mean(raw_diffs_array)
 
@@ -44,21 +46,26 @@ def calculate_d_ij(golomb_ruler):
     for i in range(len(golomb_ruler)):
         for j in range(i + 1, len(golomb_ruler)):
             raw_diff = abs(golomb_ruler[i] - golomb_ruler[j])
-            d_val = raw_diff / avg_raw_diff if avg_raw_diff != 0 else float('inf')
+            d_val = raw_diff / \
+                avg_raw_diff if avg_raw_diff != 0 else float('inf')
             d_ij_values.append(d_val)
-            your_i_n_values.append(np.log(1 + 1/d_val) if d_val > 0 else np.inf)
+            your_i_n_values.append(
+                np.log(1 + 1/d_val) if d_val > 0 else np.inf)
 
     return np.array(d_ij_values), np.array(your_i_n_values)
 
 # --- 3. Generic Decay Models ---
 
+
 def inverse_power_law(d, A, C):
     return A / (d**C)
+
 
 def exponential_decay(d, A, B):
     return A * np.exp(-B * d)
 
 # --- 4. Plotting Routine ---
+
 
 def plot_mi_vs_decay(n_elements=20, normalize=False, save_fig=True, fig_name="Figure_J1.pdf"):
     # Generate ruler and MI values
@@ -81,7 +88,8 @@ def plot_mi_vs_decay(n_elements=20, normalize=False, save_fig=True, fig_name="Fi
 
     # Fit inverse power law
     try:
-        popt_power, _ = curve_fit(inverse_power_law, d_ij, mi_vals, p0=[1.0, 1.0], bounds=([0, 0], [np.inf, 10.0]))
+        popt_power, _ = curve_fit(inverse_power_law, d_ij, mi_vals, p0=[
+                                  1.0, 1.0], bounds=([0, 0], [np.inf, 10.0]))
         mi_fit_power = inverse_power_law(d_ij, *popt_power)
         r2_power = r2_score(mi_vals, mi_fit_power)
     except RuntimeError:
@@ -90,7 +98,8 @@ def plot_mi_vs_decay(n_elements=20, normalize=False, save_fig=True, fig_name="Fi
 
     # Fit exponential
     try:
-        popt_exp, _ = curve_fit(exponential_decay, d_ij, mi_vals, p0=[1.0, 0.1], bounds=([0, 0], [np.inf, np.inf]))
+        popt_exp, _ = curve_fit(exponential_decay, d_ij, mi_vals, p0=[
+                                1.0, 0.1], bounds=([0, 0], [np.inf, np.inf]))
         mi_fit_exp = exponential_decay(d_ij, *popt_exp)
         r2_exp = r2_score(mi_vals, mi_fit_exp)
     except RuntimeError:
@@ -110,8 +119,10 @@ def plot_mi_vs_decay(n_elements=20, normalize=False, save_fig=True, fig_name="Fi
                  label=f'Best Fit $Ae^{{-Bd}}$: A={popt_exp[0]:.2f}, B={popt_exp[1]:.2f}, $R^2$={r2_exp:.3f}')
 
     plt.title('Functional Comparison: Axiomatic MI vs. Probabilistic Decay Models')
-    plt.xlabel(r'Normalized Distinction Distance $d_{ij} = |x_i - x_j| / \langle |x_k - x_l| \rangle$')
-    plt.ylabel('Mutual Information $I(i,j)$' + (' (Normalized)' if normalize else ''))
+    plt.xlabel(
+        r'Normalized Distinction Distance $d_{ij} = |x_i - x_j| / \langle |x_k - x_l| \rangle$')
+    plt.ylabel('Mutual Information $I(i,j)$' +
+               (' (Normalized)' if normalize else ''))
     plt.grid(True, linestyle='--', alpha=0.6)
     plt.legend()
     plt.ylim(bottom=0)
@@ -124,6 +135,7 @@ def plot_mi_vs_decay(n_elements=20, normalize=False, save_fig=True, fig_name="Fi
 
 # --- Execute ---
 
-if __name__ == "__main__":
-    plot_mi_vs_decay(n_elements=20, normalize=False, save_fig=True, fig_name="Figure_J.1.png")
 
+if __name__ == "__main__":
+    plot_mi_vs_decay(n_elements=20, normalize=False,
+                     save_fig=True, fig_name="Figure_J.1.png")

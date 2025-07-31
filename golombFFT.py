@@ -182,7 +182,7 @@ def plot_results(signal: np.ndarray, freqs: np.ndarray, mag: np.ndarray, power: 
 
     # --- FFT Magnitude Spectrum Plot ---
     ax1.plot(freqs, mag, color='blue')
-    #ax1.stem(freqs, mag)
+    # ax1.stem(freqs, mag)
     ax1.set_title(
         f"FFT Magnitude Spectrum{dc_status_text}{window_status_text}")
     ax1.set_xlabel("Frequency (Normalized)")
@@ -192,8 +192,8 @@ def plot_results(signal: np.ndarray, freqs: np.ndarray, mag: np.ndarray, power: 
 
     # --- Power Spectrum Plot (Log Scale) ---
     ax2.semilogy(freqs, power, color='blue')
-    #ax2.set_yscale('log')
-    #ax2.stem(freqs, power)
+    # ax2.set_yscale('log')
+    # ax2.stem(freqs, power)
     ax2.set_title(
         f"Power Spectrum (log scale){dc_status_text}{window_status_text}")
     ax2.set_xlabel("Frequency (Normalized)")
