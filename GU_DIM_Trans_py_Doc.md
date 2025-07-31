@@ -235,7 +235,7 @@ Distortion: 0.797
 
 #### `mutual_information_matrix.png`
 
-![MI](./mutual_information_matrix.png)
+![MI](./Documentation/mutual_information_matrix.png)
 
 **Caption**: Heatmap of the mutual information matrix $W$ at $n=1000$.
 **Purpose**: Displays informational correlations, with brighter areas indicating stronger links (Appendix E.1).
@@ -243,7 +243,7 @@ Distortion: 0.797
 
 #### `eigenvalue_ratios.png`
 
-![Eigenvalue](./eigenvalue_ratios.png)
+![Eigenvalue](./Documentation/eigenvalue_ratios.png)
 
 **Caption**: Line plot of eigenvalue ratios ($\\lambda\_2/\\lambda\_1$ to $\\lambda\_5/\\lambda\_4$) vs. $n$, with thresholds (1.3, 1.15, 1.01, 1.00).
 **Purpose**: Tracks dimensional transitions, e.g., 3D→4D at $n=210$ (Appendix E.2).
@@ -251,7 +251,7 @@ Distortion: 0.797
 
 #### `informational_curvature.png`
 
-![Info_Curv](./informational_curvature.png)
+![Info_Curv](./Documentation/informational_curvature.png)
 
 **Caption**: Line plot of $R\_n$ vs. $n$, with thresholds (1.3, 2.2, 3.0, 4.0).
 **Purpose**: Shows informational complexity growth, triggering transitions like 3D→4D at $R\_n \> 3.0$.
@@ -259,7 +259,7 @@ Distortion: 0.797
 
 #### `embedding_2D.png`
 
-![2D](./embedding_2D.png)
+![2D](./Documentation/embedding_2D.png)
 
 **Caption**: 2D scatter plot of the embedding at n=19 ([s\_{i,1}, s\_{i,2}]).
 **Purpose**: Depicts the 2D spatial manifold’s emergence (Appendix D.3).
@@ -267,7 +267,7 @@ Distortion: 0.797
 
 #### `embedding_3D.png`
 
-![3D](./embedding_3D.png)
+![3D](./Documentation/embedding_3D.png)
 
 **Caption**: 3D scatter plot of the embedding at n=66 ([s\_{i,1}, s\_{i,2}, s\_{i,3}]).
 **Purpose**: Illustrates the 3D spatial manifold’s development (Appendix D.3).
@@ -275,7 +275,7 @@ Distortion: 0.797
 
 #### `embedding_spacetime_4D.png`
 
-![4D](./embedding_spacetime_4D.png)
+![4D](./Documentation/embedding_spacetime_4D.png)
 
 **Caption**: 3D scatter plot of the spatial component at n=210 ([s\_{i,1}, s\_{i,2}, s\_{i,3}]).
 **Purpose**: Visualizes the 3D spatial manifold in the 4D spacetime $P\_i = (t\_i, s\_{i,1}, s\_{i,2}, s\_{i,3})$ (Appendix D.4).
