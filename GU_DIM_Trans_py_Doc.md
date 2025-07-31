@@ -194,7 +194,7 @@ Example: `Progress: n=100, d_min=0.099, l_info=0.178, R_n=2.496` (every 100 step
 
 #### Summary Table
 
-```
+```text
 Summary of Essential Calculated Values:
 ----------------------------------------------------------------------
     n |    d_min |    l_info |        R_n |    λ₂/λ₁ |    λ₃/λ₂ |    λ₄/λ₃ |    λ₅/λ₄
@@ -204,13 +204,11 @@ Summary of Essential Calculated Values:
   210 |    0.083 |    0.158 |    3.001 |    1.198 |    1.042 |    1.031 |    1.032 (4D)
   907 |    0.062 |    0.128 |    4.000 |    1.202 |    1.021 |    1.005 |    1.019 (5D)
  1000 |    0.061 |    0.126 |    4.066 |    1.182 |    1.019 |    1.004 |    1.008 (Final)
-```
 
 #### Validation Parameters
 
 Example (n=210, 3D→4D):
 
-```txt
 Validation Parameters:
 --------------------------------
 Golomb Validity: Valid
@@ -221,7 +219,6 @@ R_n: 3.001 (> 3.0)
 Energy Functional: 3044455.237 (>= 0)
 Spectral Gaps: λ₁=83.894, Δλ₂=16.585, Δλ₃=4.262, Δλ₄=3.221, Δλ₅=3.503
 Distortion: 0.797
-```
 
 ### Graphical Output
 
