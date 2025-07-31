@@ -355,7 +355,8 @@ The sum is over edges in $G_{\text{info}}$ with $d(i,j) \leq r$, where $r \propt
 
 #### F.2 Equations of Motion
 
-Vary $S_G$ with respect to $P_i = (t_i, s_{i,1}, s_{i,2}, s_{i,3})$ : $$\sum_{j \in N_i} I(X_i; X_j) (P_i - P_j) = -\nabla_{P_i} E(X_i)$$
+Vary $S_G$ with respect to $P_i = (t_i, s_{i,1}, s_{i,2}, s_{i,3})$ :
+$$\sum_{j \in N_i} I(X_i; X_j) (P_i - P_j) = -\nabla_{P_i} E(X_i)$$
 
 #### F.3 Continuum Limit
 
