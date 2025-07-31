@@ -379,12 +379,12 @@ Positional uncertainty: $$\Delta x_i \sim d_{\min}^{(n)} = \min_{j \in N_i} \fra
 
 #### H.1 Informational Spectral Gaps
 
-Energy gaps:$$\Delta E \sim \frac{1}{\ell_{\text{info}}} \cdot \left| \sum_{j \in N_i} I(X_i; X_j) - \sum_{j \in N_k} I(X_k; X_j) \right|$$
+Energy gaps: $$\Delta E \sim \frac{1}{\ell_{\text{info}}} \cdot \left| \sum_{j \in N_i} I(X_i; X_j) - \sum_{j \in N_k} I(X_k; X_j) \right|$$
 **Test:** Measure spectral gaps in quantum simulators.
 
 #### H.2 CMB Fluctuations
 
-Curvature fluctuations:$$\lambda_k \sim \frac{1}{\ell_{\text{info}}^2} \cdot \left(1 - \frac{\langle I(X_i; X_j) \rangle}{\log \binom{n}{2}}\right)$$
+Curvature fluctuations: $$\lambda_k \sim \frac{1}{\ell_{\text{info}}^2} \cdot \left(1 - \frac{\langle I(X_i; X_j) \rangle}{\log \binom{n}{2}}\right)$$
 **Test:** Search for discrete “informational modes” in CMB B-mode polarization.
 
 ### Appendix I: Open Research Topics
