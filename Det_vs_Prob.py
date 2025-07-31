@@ -125,5 +125,5 @@ def plot_mi_vs_decay(n_elements=20, normalize=False, save_fig=True, fig_name="Fi
 # --- Execute ---
 
 if __name__ == "__main__":
-    plot_mi_vs_decay(n_elements=20, normalize=False, save_fig=True, fig_name="Figure_J1.pdf")
+    plot_mi_vs_decay(n_elements=20, normalize=False, save_fig=True, fig_name="Figure_J.1.png")
 
