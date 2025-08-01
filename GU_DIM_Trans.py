@@ -193,7 +193,7 @@ def plot_results(G_full, results, metrics_history):
     plt.title(f'Mutual Information Matrix at n={len(G_full)}')
     plt.xlabel('Distinction i')
     plt.ylabel('Distinction j')
-    plt.savefig('mutual_information_matrix.png')
+    plt.savefig('mutual_information_matrix.svg')
     plt.show()
     plt.close()
 
