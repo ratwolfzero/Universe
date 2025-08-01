@@ -89,8 +89,13 @@ Each step adds a minimal integer $m$ such that all new pairwise differences are 
 ### 3.2 Example Construction: $G_0$ to $G_3$
 
 $G_0 = {0} \Rightarrow D = \emptyset$
+
 $G_1 = {0, 1} \Rightarrow D = {1}$
-Attempt $2$: $2 - 1 = 1 \in D$ → invalid. Try $3$: $3 - 1 = 2$, $3 - 0 = 3$ → all new → accept. $G_2 = {0, 1, 3}, D = {1, 2, 3}$
+
+Attempt $2$: $2 - 1 = 1 \in D$ → invalid.
+
+Try $3$: $3 - 1 = 2$, $3 - 0 = 3$ → all new → accept. $G_2 = {0, 1, 3}, D = {1, 2, 3}$
+
 Try $4, 5, 6$: all yield repeats. $7$: $7 - 3 = 4$, $7 - 1 = 6$, $7 - 0 = 7$ → all new. $G_3 = {0, 1, 3, 7}$
 
 ---
