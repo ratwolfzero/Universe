@@ -345,7 +345,7 @@ def print_summary(results, metrics_history):
 
 
 def print_validation(G, results):
-    """Print validation parameters to confirm compliance with the framework."""
+    """Print validation parameters to confirm compliance with the framework, including 1D→2D."""
     is_valid, entropy = validate_golomb(G)
     print("\nValidation Parameters:")
     print("-" * 80)
@@ -355,6 +355,44 @@ def print_validation(G, results):
     temporal_valid = np.all(np.diff(G) > 0)
     print(
         f"Temporal Order (Axiom III, G[i] < G[i+1]): {'Valid' if temporal_valid else 'Invalid'}")
+
+    # Validate 1D→2D transition
+    if results["2D"] is not None:
+        G_2D = G[:results["2D"]]
+        d_min, l_info, R_n, W = compute_metrics(G_2D)
+        _, _, _, _, r1, r2, r3, r4 = check_transitions(
+            G_2D, d_min, l_info, R_n)
+        n = len(G_2D)
+        d_ij = 1 / (1 + W)
+        np.fill_diagonal(d_ij, np.inf)
+        l_eff = np.min(d_ij[d_ij < np.inf])
+        E_n = np.sum(1 / l_eff**2 - 1 / d_ij[d_ij < np.inf]**2) / 2
+        D = np.diag(np.sum(W, axis=1))
+        L = D - W
+        eigenvalues = eigh(L, eigvals_only=True, subset_by_index=[0, 5])
+        λ0, λ1, λ2, λ3, λ4, λ5 = eigenvalues
+        gap1 = λ1
+        gap2 = λ2 - λ1
+        gap3 = λ3 - λ2
+        gap4 = λ4 - λ3
+        gap5 = λ5 - λ4
+        embedding_2D = compute_embedding(G_2D, 2)
+        euclidean_dists = np.sqrt(
+            np.sum((embedding_2D[:, None] - embedding_2D)**2, axis=2))
+        np.fill_diagonal(d_ij, 0)
+        distortion = np.mean((euclidean_dists - d_ij)**2 / (d_ij**2 + 1e-16))
+        print(f"\n1D→2D Transition at n={results['2D']}:")
+        print(
+            f"  λ₂/λ₁ = {r1:.3f} (> 1.3: {'Valid' if r1 > 1.3 else 'Invalid'})")
+        print(
+            f"  R_n = {R_n:.3f} (> 1.3: {'Valid' if R_n > 1.3 else 'Invalid'})")
+        print(
+            f"  Energy Functional (Axiom V): E_n = {E_n:.3f} (>= 0: {'Valid' if E_n >= 0 else 'Invalid'})")
+        print(
+            f"  Spectral Gaps (Annex H): λ₁ = {gap1:.3f}, λ₂-λ₁ = {gap2:.3f}, λ₃-λ₂ = {gap3:.3f}, λ₄-λ₃ = {gap4:.3f}, λ₅-λ₄ = {gap5:.3f}")
+        print(f"  2D Embedding Distortion (Annex D): {distortion:.3f}")
+        print(
+            f"  W (I_n) Summary: Max = {np.max(W):.3f}, Mean = {np.mean(W[W > 0]):.3f}")
 
     # Validate 2D→3D transition
     if results["3D"] is not None:
@@ -391,7 +429,6 @@ def print_validation(G, results):
         print(
             f"  Spectral Gaps (Annex H): λ₁ = {gap1:.3f}, λ₂-λ₁ = {gap2:.3f}, λ₃-λ₂ = {gap3:.3f}, λ₄-λ₃ = {gap4:.3f}, λ₅-λ₄ = {gap5:.3f}")
         print(f"  3D Embedding Distortion (Annex D): {distortion:.3f}")
-        # Added
         print(
             f"  W (I_n) Summary: Max = {np.max(W):.3f}, Mean = {np.mean(W[W > 0]):.3f}")
 
@@ -430,7 +467,6 @@ def print_validation(G, results):
         print(
             f"  Spectral Gaps (Annex H): λ₁ = {gap1:.3f}, λ₂-λ₁ = {gap2:.3f}, λ₃-λ₂ = {gap3:.3f}, λ₄-λ₃ = {gap4:.3f}, λ₅-λ₄ = {gap5:.3f}")
         print(f"  3D Spatial Embedding Distortion (Annex D): {distortion:.3f}")
-        # Added
         print(
             f"  W (I_n) Summary: Max = {np.max(W):.3f}, Mean = {np.mean(W[W > 0]):.3f}")
 
