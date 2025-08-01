@@ -208,7 +208,7 @@ is non-empty.
 #### A.2 Lemma — Uniqueness of $m$
 
 **Statement:** The value $m$ defined in the growth rule is unique.
-**Proof:** From Lemma A.1, the candidate set
+**Proof:** From Lemma A.1, the candidate set.
 $$S = {, k \in \mathbb{N} \mid k > \max(G_n),\ \forall g \in G_n,\ |k - g| \notin D(G_n) ,}$$
 is a non-empty subset of $\mathbb{N}$.
 By the well-ordering principle (every non-empty subset of $\mathbb{N}$ has a least element), the smallest such $m = \min(S)$ exists and is unique.
