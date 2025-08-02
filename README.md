@@ -333,46 +333,38 @@ Here, $t_i$ is the temporal coordinate of the $i$-th distinction, representing t
 
 The first spatial dimension emerges at a critical threshold of informational complexity, as defined in Axiom VII.
 
-- **Informational Graph:** Construct a weighted graph $G_{\text{info}}$ where vertices are the distinctions, $V = \{X_0, X_1, \ldots, X_n\}$, and edge weights are the mutual information values: $w_{ij} = I(X_i; X_j) = \log \left(1 + \frac{1}{d_{ij}}\right)$, where $d_{ij} = \frac{|x_i - x_j|}{\langle |x_k - x_l| \rangle}$.
+**Informational Graph:** Construct a weighted graph $G_{\text{info}}$ where vertices are the distinctions, $V = \{X_0, X_1, \ldots, X_n\}$, and edge weights are the mutual information values: $w_{ij} = I(X_i; X_j) = \log \left(1 + \frac{1}{d_{ij}}\right)$, where $d_{ij} = \frac{|x_i - x_j|}{\langle |x_k - x_l| \rangle}$.
 
-- **Graph Laplacian:** Analyze the structure via the Graph Laplacian matrix, $L = D - I_n$, where $D$ is the degree matrix and $I_n$ is the mutual information matrix. The eigenvalues of $L$ encode the dimensionality: $0 = \lambda_0 \leq \lambda_1 \leq \lambda_2 \leq \cdots \leq \lambda_n$.
+**Graph Laplacian:** Analyze the structure via the Graph Laplacian matrix, $L = D - I_n$, where $D$ is the degree matrix and $I_n$ is the mutual information matrix. The eigenvalues of $L$ encode the dimensionality: $0 = \lambda_0 \leq \lambda_1 \leq \lambda_2 \leq \cdots \leq \lambda_n$.
 
-- **Bifurcation to 2D:** The transition from 1D to 2D occurs when the system satisfies the intrinsic conditions:
-  $$ \frac{\lambda_2}{\lambda_1} > \frac{\lambda_3}{\lambda_2} \quad \text{and} \quad R_n > \frac{\lambda_2}{\lambda_1} $$
-  where $R_n = \frac{1}{\ell_{\text{info}}} \left(1 - \frac{d_{\min}^{(n)}}{\ell_{\text{info}}}\right)$ is the informational curvature. This indicates that the graph can no longer be embedded in 1D without significant distortion.
+**Bifurcation to 2D:** The transition from 1D to 2D occurs when the system satisfies the intrinsic conditions:
+$$ \frac{\lambda_2}{\lambda_1} > \frac{\lambda_3}{\lambda_2} \quad \text{and} \quad R_n > \frac{\lambda_2}{\lambda_1} $$
+where $R_n = \frac{1}{\ell_{\text{info}}} \left(1 - \frac{d_{\min}^{(n)}}{\ell_{\text{info}}}\right)$ is the informational curvature. This indicates that the graph can no longer be embedded in 1D without significant distortion.
 
-- **2D Embedding:** Each distinction $X_i$ is mapped to a 2D spatial coordinate $(s_{i,1}, s_{i,2})$ using the eigenvectors associated with $\lambda_1$ and $\lambda_2$.
+**2D Embedding:** Each distinction $X_i$ is mapped to a 2D spatial coordinate $(s_{i,1}, s_{i,2})$ using the eigenvectors associated with $\lambda_1$ and $\lambda_2$.
 
 #### D.3 Stage 3: The Bifurcation to 3D Spatiality
 
 The third spatial dimension emerges when the informational complexity requires a 3D embedding.
 
-- **Transition Criteria:** The system bifurcates when:
-  $$ \frac{\lambda_3}{\lambda_2} > \frac{\lambda_4}{\lambda_3} \quad \text{and} \quad R_n > \frac{\lambda_2}{\lambda_1} + \frac{\lambda_3}{\lambda_2} $$
-  This signals that the graph cannot be accurately represented in 2D.
+**Transition Criteria:** The system bifurcates when:
+$$ \frac{\lambda_3}{\lambda_2} > \frac{\lambda_4}{\lambda_3} \quad \text{and} \quad R_n > \frac{\lambda_2}{\lambda_1} + \frac{\lambda_3}{\lambda_2} $$
+This signals that the graph cannot be accurately represented in 2D.
 
-- **3D Spectral Embedding:** Each distinction $X_i$ is mapped to a 3D spatial coordinate $(s_{i,1}, s_{i,2}, s_{i,3})$ using the eigenvectors associated with $\lambda_1, \lambda_2, \lambda_3$.
+**3D Spectral Embedding:** Each distinction $X_i$ is mapped to a 3D spatial coordinate $(s_{i,1}, s_{i,2}, s_{i,3})$ using the eigenvectors associated with $\lambda_1, \lambda_2, \lambda_3$.
 
 #### D.4 Stage 4: The 4D Spacetime Manifold
 
 The final structure synthesizes the emergent 3D spatial manifold with the 1D temporal continuum.
 
-- **Stabilization Conditions:** The 4D spacetime becomes stable when:
-  $$ \frac{\lambda_4}{\lambda_3} > \frac{\lambda_3}{\lambda_2} \quad \text{and} \quad R_n > \sum_{k=1}^3 \frac{\lambda_{k+1}}{\lambda_k} $$
+**Stabilization Conditions:** The 4D spacetime becomes stable when:
+$$ \frac{\lambda_4}{\lambda_3} > \frac{\lambda_3}{\lambda_2} \quad \text{and} \quad R_n > \sum_{k=1}^3 \frac{\lambda_{k+1}}{\lambda_k} $$
 
-- **4D Coordinates:** Each distinction $X_i$ becomes an event in the 4D manifold with position:
-  $$P_i = (t_i, s_{i,1}, s_{i,2}, s_{i,3})$$
-  where:
-  - $t_i$ is the discrete integer from the Golomb ruler (temporal coordinate)
-  - $(s_{i,1}, s_{i,2}, s_{i,3})$ are continuous values from spectral embedding
-
-**Theorem D.1** (Emergence Theorem):  
-The above transition criteria guarantee:
-
-1. **Causal Consistency**: Temporal order $t_i$ is preserved in all embeddings
-2. **Spatial Stability**: Eigenvector coordinates minimize distortion energy
-3. **Metric Compatibility**: The induced pseudo-Riemannian metric satisfies:
-   $$ ds^2 = -dt^2 + \sum_{k=1}^3 ds_k^2 + O(\ell_{\text{info}}) $$
+**4D Coordinates:** Each distinction $X_i$ becomes an event in the 4D manifold with position:
+$$P_i = (t_i, s_{i,1}, s_{i,2}, s_{i,3})$$
+where:
+$t_i$ is the discrete integer from the Golomb ruler (temporal coordinate)
+$(s_{i,1}, s_{i,2}, s_{i,3})$ are continuous values from spectral embedding
 
 #### D.5 Unified Interpretation of Transition Conditions
 
