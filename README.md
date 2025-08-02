@@ -454,7 +454,9 @@ $$\ell_{\text{info}} = \frac{1}{1 + \log n}$$
 #### E.2 Informational Curvature and Dimensional Bifurcation
 
 Define an informational scalar curvature:
+
 $$R_n = \frac{1}{\ell_{\text{info}}^2} \left(1 - \frac{d_{\min}^{(n)}}{\ell_{\text{info}}}\right)$$
+
 **Theorem E.1:** When $R_n \geq \ell_{\text{info}}^{-2}$, the distinction graph requires a higher-dimensional embedding.
 **Proof:**
 
