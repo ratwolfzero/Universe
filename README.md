@@ -497,8 +497,8 @@ $$S_G = \sum_{\langle i,j \rangle} I(X_i; X_j) \cdot d(i,j)^2 + \sum_i E(X_i)$$
 
 where:
 
-- $d(i,j) = \frac{1}{1 + I(X_i; X_j)}$.
-- $E(X_i) = \sum_{j \in N_i} \log \left(1 + \frac{|t_i - t_j|}{d(i,j)}\right)$.
+- %$d(i,j) = \frac{1}{1 + I(X_i; X_j)}$$.
+- $$E(X_i) = \sum_{j \in N_i} \log \left(1 + \frac{|t_i - t_j|}{d(i,j)}\right)$§.
 
 The sum is over edges in $G_{\text{info}}$ with $d(i,j) \leq r$, where $r \propto \ell_{\text{info}}$.
 
@@ -575,7 +575,11 @@ The close functional alignment between the axiomatic mutual information $I_n(i,j
 
 ![Header Image](./Documentation/Figure_J.1.png)
 
-Figure J.1 — Functional comparison between the axiomatic mutual information $I_n(i,j) = \log(1 + 1/d_{ij})$, derived from deterministic distinction structure, and best-fit inverse power law and exponential decay models typical of probabilistic systems. Despite involving no probabilistic assumptions, the axiomatic curve closely tracks both fits across all ranges of normalized distinction distances, suggesting that familiar information-theoretic behaviors can emerge from fundamentally non-statistical foundations.
+Figure J.1 — Functional comparison between the axiomatic mutual information
+
+$$I_n(i,j) = \log(1 + 1/d_{ij})$$,
+
+derived from deterministic distinction structure, and best-fit inverse power law and exponential decay models typical of probabilistic systems. Despite involving no probabilistic assumptions, the axiomatic curve closely tracks both fits across all ranges of normalized distinction distances, suggesting that familiar information-theoretic behaviors can emerge from fundamentally non-statistical foundations.
 
 ---
 
