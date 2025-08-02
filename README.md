@@ -525,7 +525,7 @@ The close functional alignment between the axiomatic mutual information $I_n(i,j
 
 ![Header Image](./Documentation/Figure_J.1.png)
 
-*Figure J.1 — Functional comparison between the axiomatic mutual information $I_n(i,j) = \log(1 + 1/d_{ij})$, derived from deterministic distinction structure, and best-fit inverse power law and exponential decay models typical of probabilistic systems. Despite involving no probabilistic assumptions, the axiomatic curve closely tracks both fits across all ranges of normalized distinction distances, suggesting that familiar information-theoretic behaviors can emerge from fundamentally non-statistical foundations.*
+Figure J.1 — Functional comparison between the axiomatic mutual information $I_n(i,j) = \log(1 + 1/d_{ij})$, derived from deterministic distinction structure, and best-fit inverse power law and exponential decay models typical of probabilistic systems. Despite involving no probabilistic assumptions, the axiomatic curve closely tracks both fits across all ranges of normalized distinction distances, suggesting that familiar information-theoretic behaviors can emerge from fundamentally non-statistical foundations.
 
 ---
 
