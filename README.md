@@ -263,7 +263,9 @@ is non-empty.
 
 **Statement:** The value $m$ defined in the growth rule is unique.
 **Proof:** From Lemma A.1, the candidate set
+
 $$S = {, k \in \mathbb{N} \mid k > \max(G_n),\ \forall g \in G_n,\ |k - g| \notin D(G_n) ,}$$
+
 is a non-empty subset of $\mathbb{N}$.
 By the well-ordering principle (every non-empty subset of $\mathbb{N}$ has a least element), the smallest such $m = \min(S)$ exists and is unique.
 
@@ -276,10 +278,14 @@ is also a Golomb ruler.
 
 - **New vs. Old Differences:** By construction, for all $g \in G_n$, the difference $|m - g| \notin D(G_n)$. Hence, no new differences duplicate existing ones.
 - **New Differences Are Unique:** Suppose two new differences are equal:
+-
     $$|m - g_i| = |m - g_j| \quad \text{for } g_i, g_j \in G_n,\ g_i \ne g_j.$$
+
     Since $m > \max(G_n) \ge g_i, g_j$, we know $m - g_i > 0$, so:
+
     $$m - g_i = m - g_j \Rightarrow g_i = g_j,$$
-    a contradiction. So the new differences are distinct.
+
+a contradiction. So the new differences are distinct.
 Therefore, all pairwise differences in $G_{n+1}$ are unique, and $G_{n+1}$ remains a Golomb ruler.
 
 #### A.4 Conclusion
