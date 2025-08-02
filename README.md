@@ -116,7 +116,9 @@ $$ \frac{\lambda_4}{\lambda_3} > \frac{\lambda_3}{\lambda_2} \quad \text{and} \q
 
 **Growth Theorem**
 Let $G_0 = {0}$. Given Axioms I–III and the irreducibility constraint from Axiom II, define an inductive sequence ${G_n}$ such that:
+
 $$G_{n+1} = G_n \cup {m}, \quad \text{where } m = \min {k > \max(G_n) \mid \forall g \in G_n, |k - g| \notin D(G_n)}$$
+
 Each step adds a minimal integer $m$ such that all new pairwise differences are distinct from existing ones. This process constructs a **greedy Golomb ruler**, ensuring maximal novelty at each stage.
 
 ### 3.1 Properties
