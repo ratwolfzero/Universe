@@ -358,7 +358,8 @@ The third spatial dimension emerges when the informational complexity requires a
 **Transition Criteria:**
 
 The system bifurcates when:
-$$ \frac{\lambda_3}{\lambda_2} > \frac{\lambda_4}{\lambda_3} \quad \text{and} \quad R_n > \frac{\lambda_2}{\lambda_1} + \frac{\lambda_3}{\lambda_2} $$
+$$\frac{\lambda_3}{\lambda_2} > \frac{\lambda_4}{\lambda_3} \quad \text{and} \quad R_n > \frac{\lambda_2}{\lambda_1} + \frac{\lambda_3}{\lambda_2}$$
+
 This signals that the graph cannot be accurately represented in 2D.
 
 **3D Spectral Embedding:**
@@ -372,13 +373,15 @@ The final structure synthesizes the emergent 3D spatial manifold with the 1D tem
 **Stabilization Conditions:**
 
 The 4D spacetime becomes stable when:
-$$ \frac{\lambda_4}{\lambda_3} > \frac{\lambda_3}{\lambda_2} \quad \text{and} \quad R_n > \sum_{k=1}^3 \frac{\lambda_{k+1}}{\lambda_k} $$
+$$\frac{\lambda_4}{\lambda_3} > \frac{\lambda_3}{\lambda_2} \quad \text{and} \quad R_n > \sum_{k=1}^3 \frac{\lambda_{k+1}}{\lambda_k}$$
 
 **4D Coordinates:**
 
 Each distinction $X_i$ becomes an event in the 4D manifold with position:
 $$P_i = (t_i, s_{i,1}, s_{i,2}, s_{i,3})$$
+
 where:
+
 $t_i$ is the discrete integer from the Golomb ruler (temporal coordinate)
 $(s_{i,1}, s_{i,2}, s_{i,3})$ are continuous values from spectral embedding
 
@@ -402,7 +405,9 @@ This extension builds on Appendix D, where 4D spacetime emerges from a combinato
 #### E.1 Defining the Informational Scale $\ell_{\text{info}}$
 
 Axiom VII defines a pseudometric over distinctions:
+
 $$d(i,j) = \frac{1}{1 + I(X_i; X_j)}, \quad I(X_i; X_j) = \log \left(1 + \frac{1}{d_{ij}}\right), \quad d_{ij} = \frac{|x_i - x_j|}{\langle |x_k - x_l| \rangle}$$As the number of distinctions $n$ grows, the minimal distance $d_{\min}^{(n)} = \min_{i \neq j} d(i,j)$ decreases. The informational scale is:$$\ell_{\text{info}} = \frac{1}{1 + \log n}$$
+
 **Derivation:**
 
 - The entropy is $S_n = \binom{n}{2}$.
