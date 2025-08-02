@@ -344,7 +344,9 @@ Analyze the structure via the Graph Laplacian matrix, $L = D - I_n$, where $D$ i
 **Bifurcation to 2D:**
 
 The transition from 1D to 2D occurs when the system satisfies the intrinsic conditions:
+
 $$ \frac{\lambda_2}{\lambda_1} > \frac{\lambda_3}{\lambda_2} \quad \text{and} \quad R_n > \frac{\lambda_2}{\lambda_1} $$
+
 where $R_n = \frac{1}{\ell_{\text{info}}} \left(1 - \frac{d_{\min}^{(n)}}{\ell_{\text{info}}}\right)$ is the informational curvature. This indicates that the graph can no longer be embedded in 1D without significant distortion.
 
 **2D Embedding:**
