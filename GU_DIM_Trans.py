@@ -514,7 +514,7 @@ def simulate(n_max):
 
 # Run simulation
 print("Starting spacetime simulation with intrinsic transition conditions...")
-results, G_full = simulate(1000)
+results, G_full = simulate(500)
 print("\nFinal Results:")
 print(f"1D→2D transition at n={results['2D']}")
 print(f"2D→3D transition at n={results['3D']}")
