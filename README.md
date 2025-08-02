@@ -499,7 +499,7 @@ where:
 
 $$d(i,j) = \frac{1}{1 + I(X_i; X_j)}$$.
 
-$$E(X_i) = \sum_{j \in N_i} \log \left(1 + \frac{|t_i - t_j|}{d(i,j)}\right)$§.
+$$E(X_i) = \sum_{j \in N_i} \log \left(1 + \frac{|t_i - t_j|}{d(i,j)}\right)$$.
 
 The sum is over edges in $G_{\text{info}}$ with $d(i,j) \leq r$, where $r \propto \ell_{\text{info}}$.
 
