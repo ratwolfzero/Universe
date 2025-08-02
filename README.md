@@ -363,7 +363,7 @@ The first spatial dimension emerges at a critical threshold of informational com
 
 Construct a weighted graph $G_{\text{info}}$ where vertices are the distinctions, $V = \{X_0, X_1, \ldots, X_n\}$, and edge weights are the mutual information values:
 
-$$w_{ij} = I(X_i; X_j) = \log \left(1 + \frac{1}{d_{ij}}\right)$$,
+$$w_{ij} = I(X_i; X_j) = \log \left(1 + \frac{1}{d_{ij}}\right)$$
 
 where
 
