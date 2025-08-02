@@ -386,6 +386,7 @@ The third spatial dimension emerges when the informational complexity requires a
 **Transition Criteria:**
 
 The system bifurcates when:
+
 $$\frac{\lambda_3}{\lambda_2} > \frac{\lambda_4}{\lambda_3} \quad \text{and} \quad R_n > \frac{\lambda_2}{\lambda_1} + \frac{\lambda_3}{\lambda_2}$$
 
 This signals that the graph cannot be accurately represented in 2D.
@@ -401,11 +402,13 @@ The final structure synthesizes the emergent 3D spatial manifold with the 1D tem
 **Stabilization Conditions:**
 
 The 4D spacetime becomes stable when:
+
 $$\frac{\lambda_4}{\lambda_3} > \frac{\lambda_3}{\lambda_2} \quad \text{and} \quad R_n > \sum_{k=1}^3 \frac{\lambda_{k+1}}{\lambda_k}$$
 
 **4D Coordinates:**
 
 Each distinction $X_i$ becomes an event in the 4D manifold with position:
+
 $$P_i = (t_i, s_{i,1}, s_{i,2}, s_{i,3})$$
 
 where:
@@ -434,7 +437,11 @@ This extension builds on Appendix D, where 4D spacetime emerges from a combinato
 
 Axiom VII defines a pseudometric over distinctions:
 
-$$d(i,j) = \frac{1}{1 + I(X_i; X_j)}, \quad I(X_i; X_j) = \log \left(1 + \frac{1}{d_{ij}}\right), \quad d_{ij} = \frac{|x_i - x_j|}{\langle |x_k - x_l| \rangle}$$As the number of distinctions $n$ grows, the minimal distance $d_{\min}^{(n)} = \min_{i \neq j} d(i,j)$ decreases. The informational scale is:$$\ell_{\text{info}} = \frac{1}{1 + \log n}$$
+$$d(i,j) = \frac{1}{1 + I(X_i; X_j)}, \quad I(X_i; X_j) = \log \left(1 + \frac{1}{d_{ij}}\right), \quad d_{ij} = \frac{|x_i - x_j|}{\langle |x_k - x_l| \rangle}$$
+
+As the number of distinctions $n$ grows, the minimal distance $d_{\min}^{(n)} = \min_{i \neq j} d(i,j)$ decreases. The informational scale is:
+
+$$\ell_{\text{info}} = \frac{1}{1 + \log n}$$
 
 **Derivation:**
 
@@ -461,8 +468,11 @@ $$R_n = \frac{1}{\ell_{\text{info}}^2} \left(1 - \frac{d_{\min}^{(n)}}{\ell_{\te
 #### E.3 Informational Energy Functional
 
 Define:
+
 $$E_n = \sum_{i < j} \left( \frac{1}{d(i,j)^2} - \frac{1}{\ell_{\text{info}}^2} \right)$$
+
 When $d(i,j) \to \ell_{\text{info}}$, $E_n$ diverges, signaling a higher-dimensional embedding. In 3D, $d(i,j) \sim n^{-1/3}$, stabilizing $E_n$.
+
 **Physical Interpretation:** $E_n$ drives the system toward a 3D structure to maintain resolvable distinctions.
 
 ---
@@ -472,7 +482,9 @@ When $d(i,j) \to \ell_{\text{info}}$, $E_n$ diverges, signaling a higher-dimensi
 #### F.1 Discrete Action Functional
 
 Define:
+
 $$S_G = \sum_{\langle i,j \rangle} I(X_i; X_j) \cdot d(i,j)^2 + \sum_i E(X_i)$$
+
 where:
 
 - $d(i,j) = \frac{1}{1 + I(X_i; X_j)}$.
@@ -483,6 +495,7 @@ The sum is over edges in $G_{\text{info}}$ with $d(i,j) \leq r$, where $r \propt
 #### F.2 Equations of Motion
 
 Vary $S_G$ with respect to $P_i = (t_i, s_{i,1}, s_{i,2}, s_{i,3})$:
+
 $$\sum_{j \in N_i} I(X_i; X_j) (P_i - P_j) = -\nabla_{P_i} E(X_i)$$
 
 #### F.3 Continuum Limit
@@ -490,6 +503,7 @@ $$\sum_{j \in N_i} I(X_i; X_j) (P_i - P_j) = -\nabla_{P_i} E(X_i)$$
 As $n \to \infty$, the graph approximates a 4D manifold with metric:
 
 $$g_{\mu\nu}(x) = \lim_{R \to \ell_{\text{info}}} \frac{1}{N_R} \sum_{\langle i,j \rangle \in B_R(x)} \Delta P_i^\mu \Delta P_j^\nu I(X_i; X_j)$$ The action converges to:$$S_G \to \int \sqrt{-g} (R + 2\Lambda_{\text{info}}) \, d^4x$$
+
 where $\Lambda_{\text{info}} \propto \ell_{\text{info}}^{-2}$.
 **Physical Interpretation:** The dynamics resemble geodesic motion in general relativity.
 
