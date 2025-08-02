@@ -84,13 +84,13 @@ where:
 
 **Dimensional Transitions** occur via intrinsic spectral criteria when:
 
-1. **1D→2D Transition:**  
+**1D→2D Transition:**  
    $$ \frac{\lambda_2}{\lambda_1} > \frac{\lambda_3}{\lambda_2} \quad \text{and} \quad R_n > \frac{\lambda_2}{\lambda_1} $$
 
-2. **2D→3D Transition:**  
+**2D→3D Transition:**  
    $$ \frac{\lambda_3}{\lambda_2} > \frac{\lambda_4}{\lambda_3} \quad \text{and} \quad R_n > \frac{\lambda_2}{\lambda_1} + \frac{\lambda_3}{\lambda_2} $$
 
-3. **4D Stabilization:**  
+**4D Stabilization:**  
    $$ \frac{\lambda_4}{\lambda_3} > \frac{\lambda_3}{\lambda_2} \quad \text{and} \quad R_n > \sum_{k=1}^3 \frac{\lambda_{k+1}}{\lambda_k} $$
 
 ---
