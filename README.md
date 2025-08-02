@@ -462,7 +462,8 @@ $$\sum_{j \in N_i} I(X_i; X_j) (P_i - P_j) = -\nabla_{P_i} E(X_i)$$
 #### F.3 Continuum Limit
 
 As $n \to \infty$, the graph approximates a 4D manifold with metric:
-$$g_{\mu\nu}(x) = \lim_{R \to \ell_{\text{info}}} \frac{1}{N_R} \sum_{\langle i,j \rangle \in B_R(x)} \Delta P_i^\mu \Delta P_j^\nu I(X_i; X_j)$$The action converges to:$$S_G \to \int \sqrt{-g} (R + 2\Lambda_{\text{info}}) \, d^4x$$
+
+$$g_{\mu\nu}(x) = \lim_{R \to \ell_{\text{info}}} \frac{1}{N_R} \sum_{\langle i,j \rangle \in B_R(x)} \Delta P_i^\mu \Delta P_j^\nu I(X_i; X_j)$$ The action converges to:$$S_G \to \int \sqrt{-g} (R + 2\Lambda_{\text{info}}) \, d^4x$$
 where $\Lambda_{\text{info}} \propto \ell_{\text{info}}^{-2}$.
 **Physical Interpretation:** The dynamics resemble geodesic motion in general relativity.
 
@@ -473,13 +474,17 @@ where $\Lambda_{\text{info}} \propto \ell_{\text{info}}^{-2}$.
 #### G.1 Probabilistic Amplitudes
 
 Define a state space:
+
 $$\Psi(X_i) = \mathbb{C}^{|N_i|}, \quad \langle X_j | f | X_i \rangle = \exp\left(-i \sum_{k \in N_i \cap N_j} I(X_k; X_i, X_j)\right)$$
+
 **Physical Interpretation:** The phase encodes informational context, mimicking quantum amplitudes.
 
 #### G.2 Emergent Uncertainty Principle
 
 Positional uncertainty:
-$$\Delta x_i \sim d_{\min}^{(n)} = \min_{j \in N_i} \frac{1}{1 + I(X_i; X_j)}$$Momentum-like uncertainty:$$\Delta p_i \sim \frac{\partial E_n}{\partial d_{\min}^{(n)}} \approx \frac{2}{(d_{\min}^{(n)})^3}$$Uncertainty product:$$\Delta x_i \Delta p_i \sim \frac{2}{(d_{\min}^{(n)})^2}$$When $d_{\min}^{(n)} \to \ell_{\text{info}}$:$$\Delta x_i \Delta p_i \sim \ell_{\text{info}}^{-2}$$
+
+$$\Delta x_i \sim d_{\min}^{(n)} = \min_{j \in N_i} \frac{1}{1 + I(X_i; X_j)}$$ Momentum-like uncertainty: $$\Delta p_i \sim \frac{\partial E_n}{\partial d_{\min}^{(n)}} \approx \frac{2}{(d_{\min}^{(n)})^3}$$ Uncertainty product:$$\Delta x_i \Delta p_i \sim \frac{2}{(d_{\min}^{(n)})^2}$$ When $d_{\min}^{(n)} \to \ell_{\text{info}}$:$$\Delta x_i \Delta p_i \sim \ell_{\text{info}}^{-2}$$
+
 **Physical Interpretation:** This resembles the Heisenberg uncertainty principle.
 
 ---
