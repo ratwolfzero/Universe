@@ -497,9 +497,9 @@ $$S_G = \sum_{\langle i,j \rangle} I(X_i; X_j) \cdot d(i,j)^2 + \sum_i E(X_i)$$
 
 where:
 
-$$d(i,j) = \frac{1}{1 + I(X_i; X_j)}$$.
+$$d(i,j) = \frac{1}{1 + I(X_i; X_j)}$$
 
-$$E(X_i) = \sum_{j \in N_i} \log \left(1 + \frac{|t_i - t_j|}{d(i,j)}\right)$$.
+$$E(X_i) = \sum_{j \in N_i} \log \left(1 + \frac{|t_i - t_j|}{d(i,j)}\right)$$
 
 The sum is over edges in $G_{\text{info}}$ with $d(i,j) \leq r$, where $r \propto \ell_{\text{info}}$.
 
