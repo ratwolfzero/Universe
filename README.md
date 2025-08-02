@@ -63,17 +63,35 @@ Mutual information between distinctions induces an emergent geometry. Let the sy
 
 Define a random variable $X_i$ for each distinction $x_i \in G_n$, and define the **mutual information matrix** $I_n$ as:
 
-$$I_n(i,j) = \log \left(1 + \frac{1}{d_{ij}}\right),$$
+$$ I_n(i,j) = \log \left(1 + \frac{1}{d_{ij}}\right), $$
 
 where the **normalized distinction distance** is given by:
 
-$$d_{ij} = \frac{|x_i - x_j|}{\langle |x_k - x_l| \rangle},$$
+$$ d_{ij} = \frac{|x_i - x_j|}{\langle |x_k - x_l| \rangle}, $$
 
-and $\langle |x_k - x_l| \rangle$ is the average pairwise difference over all $k \neq l$ in $G_n$, i.e.,
+and $\langle |x_k - x_l| \rangle$ is the average pairwise difference over all $k \neq l$ in $G_n$.
 
-$$\langle |x_k - x_l| \rangle = \frac{2}{n(n - 1)} \sum_{k < l} |x_k - x_l|.$$
+**Informational Curvature** is computed as:
 
-This normalization ensures that the mutual information is scale-invariant across different stages of growth. Larger distinction distances yield lower mutual information, approximating a decaying interaction strength.
+$$ R_n = \frac{1}{\ell_{\text{info}}} \left(1 - \frac{d_{\min}^{(n)}}{\ell_{\text{info}}}\right) $$
+
+where:
+
+- $\ell_{\text{info}} = \frac{1}{1 + \log n}$ (emergent informational scale)
+- $d_{\min}^{(n)} = \min_{i \neq j} \frac{1}{1 + I_n(i,j)}$ (minimal normalized distance)
+
+*Implementation note:* The code uses `max(0, ...)` to ensure non-negativity, while the theoretical form shows the underlying physical meaning.
+
+**Dimensional Transitions** occur via intrinsic spectral criteria when:
+
+1. **1D→2D Transition:**  
+   $$ \frac{\lambda_2}{\lambda_1} > \frac{\lambda_3}{\lambda_2} \quad \text{and} \quad R_n > \frac{\lambda_2}{\lambda_1} $$
+
+2. **2D→3D Transition:**  
+   $$ \frac{\lambda_3}{\lambda_2} > \frac{\lambda_4}{\lambda_3} \quad \text{and} \quad R_n > \frac{\lambda_2}{\lambda_1} + \frac{\lambda_3}{\lambda_2} $$
+
+3. **4D Stabilization:**  
+   $$ \frac{\lambda_4}{\lambda_3} > \frac{\lambda_3}{\lambda_2} \quad \text{and} \quad R_n > \sum_{k=1}^3 \frac{\lambda_{k+1}}{\lambda_k} $$
 
 ---
 
@@ -100,16 +118,16 @@ Each step adds a minimal integer $m$ such that all new pairwise differences are 
 
 ### 3.1 Properties
 
-* **Irreversibility:** Deletion removes irreducible differences (violates Axiom II).
-* **Determinism:** The choice of $m$ is unique and ordered.
-* **Openness:** The growth process is infinite in potential extent.
+- **Irreversibility:** Deletion removes irreducible differences (violates Axiom II).
+- **Determinism:** The choice of $m$ is unique and ordered.
+- **Openness:** The growth process is infinite in potential extent.
 
 ### 3.2 Example Construction: $G_0$ to $G_3$
 
-* $G_0 = {0} \Rightarrow D = \emptyset$
-* $G_1 = {0, 1} \Rightarrow D = {1}$
-* Attempt $2$: $2 - 1 = 1 \in D$ → invalid. Try $3$: $3 - 1 = 2$, $3 - 0 = 3$ → all new → accept. $G_2 = {0, 1, 3}, D = {1, 2, 3}$
-* Try $4, 5, 6$: all yield repeats. $7$: $7 - 3 = 4$, $7 - 1 = 6$, $7 - 0 = 7$ → all new. $G_3 = {0, 1, 3, 7}$
+- $G_0 = {0} \Rightarrow D = \emptyset$
+- $G_1 = {0, 1} \Rightarrow D = {1}$
+- Attempt $2$: $2 - 1 = 1 \in D$ → invalid. Try $3$: $3 - 1 = 2$, $3 - 0 = 3$ → all new → accept. $G_2 = {0, 1, 3}, D = {1, 2, 3}$
+- Try $4, 5, 6$: all yield repeats. $7$: $7 - 3 = 4$, $7 - 1 = 6$, $7 - 0 = 7$ → all new. $G_3 = {0, 1, 3, 7}$
 
 ---
 
@@ -140,8 +158,8 @@ Each step adds a minimal integer $m$ such that all new pairwise differences are 
 
 Let $S = {x_0, x_1, \ldots, x_n}$, with $x_i \prec x_j$ for $i < j$, and define:
 
-* $D_{ij} = |x_j - x_i|$
-* $E(x_i) \propto \text{distinctiveness}(x_i)$
+- $D_{ij} = |x_j - x_i|$
+- $E(x_i) \propto \text{distinctiveness}(x_i)$
 
 Then:
 $$\forall i < j, \forall k < l, \quad D_{ij} \ne D_{kl}\Rightarrow E(S) = \sum_{i<j}\left(D_{ij}\right), \quad f \text{ strictly decreasing}$$
@@ -153,13 +171,13 @@ Hence, Golomb rulers minimize total energy under the constraint of maximal pairw
 
 ### 6.1 Testable Predictions
 
-* No duplicate pairwise differences should exist at any scale.
-* Growth is deterministic and irreversible.
-* Removing any distinction violates Axiom II (structural inconsistency).
+- No duplicate pairwise differences should exist at any scale.
+- Growth is deterministic and irreversible.
+- Removing any distinction violates Axiom II (structural inconsistency).
 
 ### 6.2 Falsification Criterion
 
-* Observation of repeated relational distances within fundamental physical structure would falsify the model.
+- Observation of repeated relational distances within fundamental physical structure would falsify the model.
 
 ---
 
@@ -173,9 +191,9 @@ Hence, Golomb rulers minimize total energy under the constraint of maximal pairw
 
 ### 7.1 Analogy
 
-* **String Theory** → Complete spacecraft, lacks launch path
-* **LQG** → High-performance engine, lacks chassis
-* **Golomb Universe** → New propulsion principle under theoretical test
+- **String Theory** → Complete spacecraft, lacks launch path
+- **LQG** → High-performance engine, lacks chassis
+- **Golomb Universe** → New propulsion principle under theoretical test
 
 ---
 
@@ -198,8 +216,8 @@ as the set of all pairwise absolute differences within $G_n$. Assume that all el
 **Growth Rule**
 Define $G_{n+1} = G_n \cup {m}$, where $m$ is the smallest natural number such that:
 
-* $m > \max(G_n)$
-* For all $g \in G_n$, $|m - g| \notin D(G_n)$
+- $m > \max(G_n)$
+- For all $g \in G_n$, $|m - g| \notin D(G_n)$
 
 We now prove that such an $m$ exists, is unique, and that $G_{n+1}$ is again a Golomb ruler.
 
@@ -210,8 +228,8 @@ $$m > \max(G_n)$$ such that$$|m - g| \notin D(G_n) \quad \text{for all } g \in G
 **Proof:** Let $M = \max(G_n)$. We are looking for some $m > M$ such that none of the new differences $|m - g|$ (with $g \in G_n$) are already in $D(G_n)$.
 Note that:
 
-* $D(G_n)$ is finite.
-* The set of candidates
+- $D(G_n)$ is finite.
+- The set of candidates
     $${k \in \mathbb{N} \mid k > M}$$
     is infinite.
 Now consider all new differences generated by such $k > M$:
@@ -233,8 +251,8 @@ $$G_{n+1} = G_n \cup {m}$$
 is also a Golomb ruler.
 **Proof:** We must show all pairwise differences in $G_{n+1}$ are distinct.
 
-* **New vs. Old Differences:** By construction, for all $g \in G_n$, the difference $|m - g| \notin D(G_n)$. Hence, no new differences duplicate existing ones.
-* **New Differences Are Unique:** Suppose two new differences are equal:
+- **New vs. Old Differences:** By construction, for all $g \in G_n$, the difference $|m - g| \notin D(G_n)$. Hence, no new differences duplicate existing ones.
+- **New Differences Are Unique:** Suppose two new differences are equal:
     $$|m - g_i| = |m - g_j| \quad \text{for } g_i, g_j \in G_n,\ g_i \ne g_j.$$
     Since $m > \max(G_n) \ge g_i, g_j$, we know $m - g_i > 0$, so:
     $$m - g_i = m - g_j \Rightarrow g_i = g_j,$$
@@ -245,9 +263,9 @@ Therefore, all pairwise differences in $G_{n+1}$ are unique, and $G_{n+1}$ remai
 
 This completes the proof that:
 
-* An appropriate $m$ always exists (Lemma A.1)
-* It is uniquely defined (Lemma A.2)
-* The new set $G_{n+1}$ maintains the Golomb ruler property (Lemma A.3)
+- An appropriate $m$ always exists (Lemma A.1)
+- It is uniquely defined (Lemma A.2)
+- The new set $G_{n+1}$ maintains the Golomb ruler property (Lemma A.3)
 
 Hence, the inductive growth rule generates a valid sequence of Golomb rulers.
 
@@ -263,9 +281,9 @@ be the next ruler generated by the growth rule. We show that removing $m$ from $
 $$|G_n| = n$$ new and distinct differences of the form: $${|m - g| \mid g \in G_n}.$$
 These differences satisfy the following properties:
 
-* They were not present in $D(G_n)$
-* They are mutually distinct
-* Their inclusion was necessary to maintain the Golomb ruler property of $G_{n+1}$
+- They were not present in $D(G_n)$
+- They are mutually distinct
+- Their inclusion was necessary to maintain the Golomb ruler property of $G_{n+1}$
 
 **Connection to Axiom II: Irreducible Uniqueness**
 Axiom II states that every step in the growth process introduces irreducible distinctions. Formally, it implies an idempotency principle:
@@ -273,18 +291,18 @@ $$\Box(\Box(X)) = \Box(X),$$
 meaning that once a distinction has been made, applying the process again should not change it.
 Removing $m$ would destroy:
 
-* The element $m$ itself
-* The $n$ unique differences it created
-* The integrity of the Golomb ruler property for the current state
+- The element $m$ itself
+- The $n$ unique differences it created
+- The integrity of the Golomb ruler property for the current state
 
 This act of erasing distinctions violates Axiom II, which asserts that once a unique contribution is made, it must be preserved.
 
 **Conclusion:** Since removing $m$ results in the loss of uniquely introduced differences — violating the irreducibility principle — the growth process cannot be reversed.
 Therefore, the process is:
 
-* Strictly additive
-* History-dependent
-* Irreversible
+- Strictly additive
+- History-dependent
+- Irreversible
 
 This concludes the proof that the inductive construction of Golomb rulers via the growth rule is an irreversible process.
 
@@ -304,36 +322,65 @@ The transition from a 1D combinatorial sequence to a 4D spacetime is an emergent
 
 #### D.1 Stage 1: The 1D Temporal Continuum
 
-This stage is defined by the fundamental growth rule. The universe’s state at any step $n$ is a discrete, irreversible sequence of distinctions, represented as an ordered set of integers from the greedy Golomb ruler algorithm:
-$$G_n = {t_0, t_1, \ldots, t_n}$$
+This stage is defined by the fundamental growth rule. The universe's state at any step $n$ is a discrete, irreversible sequence of distinctions, represented as an ordered set of integers from the greedy Golomb ruler algorithm:
+$$G_n = \{t_0, t_1, \ldots, t_n\}$$
 Here, $t_i$ is the temporal coordinate of the $i$-th distinction, representing the fundamental, irreversible arrow of time (Axiom III). This object is purely 1D.
 
 #### D.2 Stage 2: The Emergence of 2D Spatiality
 
 The first spatial dimension emerges at a critical threshold of informational complexity, as defined in Axiom VII.
 
-* **Informational Graph:** Construct a weighted graph $G_{\text{info}}$ where vertices are the distinctions, $V = {X_0, X_1, \ldots, X_n}$, and edge weights are the mutual information values: $w_{ij} = I(X_i; X_j) = \log \left(1 + \frac{1}{d_{ij}}\right)$, where $d_{ij} = \frac{|x_i - x_j|}{\langle |x_k - x_l| \rangle}$.
-* **Graph Laplacian:** Analyze the structure via the Graph Laplacian matrix, $L = D - I_n$, where $D$ is the degree matrix and $I_n$ is the mutual information matrix. The eigenvalues of $L$ encode the dimensionality: $0 = \lambda_0 \leq \lambda_1 \leq \lambda_2 \leq \cdots \leq \lambda_n$.
-* **Bifurcation to 2D:** The transition from 1D to 2D occurs when the eigenvalue ratio $\lambda_2 / \lambda_1 > 1.3$ and the informational curvature $R_n = \frac{1}{\ell_{\text{info}}^2} \left(1 - \frac{d_{\min}^{(n)}}{\ell_{\text{info}}}\right) > 1.3$, where $\ell_{\text{info}} = \frac{1}{1 + \log n}$ and $d_{\min}^{(n)} = \min_{i \neq j} \frac{1}{1 + I_n(i,j)}$. This indicates that the graph can no longer be embedded in 1D without significant distortion.
-* **2D Embedding:** Each distinction $X_i$ is mapped to a 2D spatial coordinate $(s_{i,1}, s_{i,2})$ using the eigenvectors associated with $\lambda_1$ and $\lambda_2$.
+- **Informational Graph:** Construct a weighted graph $G_{\text{info}}$ where vertices are the distinctions, $V = \{X_0, X_1, \ldots, X_n\}$, and edge weights are the mutual information values: $w_{ij} = I(X_i; X_j) = \log \left(1 + \frac{1}{d_{ij}}\right)$, where $d_{ij} = \frac{|x_i - x_j|}{\langle |x_k - x_l| \rangle}$.
+
+- **Graph Laplacian:** Analyze the structure via the Graph Laplacian matrix, $L = D - I_n$, where $D$ is the degree matrix and $I_n$ is the mutual information matrix. The eigenvalues of $L$ encode the dimensionality: $0 = \lambda_0 \leq \lambda_1 \leq \lambda_2 \leq \cdots \leq \lambda_n$.
+
+- **Bifurcation to 2D:** The transition from 1D to 2D occurs when the system satisfies the intrinsic conditions:
+  $$ \frac{\lambda_2}{\lambda_1} > \frac{\lambda_3}{\lambda_2} \quad \text{and} \quad R_n > \frac{\lambda_2}{\lambda_1} $$
+  where $R_n = \frac{1}{\ell_{\text{info}}} \left(1 - \frac{d_{\min}^{(n)}}{\ell_{\text{info}}}\right)$ is the informational curvature. This indicates that the graph can no longer be embedded in 1D without significant distortion.
+
+- **2D Embedding:** Each distinction $X_i$ is mapped to a 2D spatial coordinate $(s_{i,1}, s_{i,2})$ using the eigenvectors associated with $\lambda_1$ and $\lambda_2$.
 
 #### D.3 Stage 3: The Bifurcation to 3D Spatiality
 
 The third spatial dimension emerges when the informational complexity requires a 3D embedding.
 
-* The transition is triggered when $\lambda_3 / \lambda_2 > 1.15$ and $R_n > 2.2$, indicating the graph cannot be accurately represented in 2D.
-* Each distinction $X_i$ is mapped to a 3D spatial coordinate $(s_{i,1}, s_{i,2}, s_{i,3})$ using the eigenvectors associated with $\lambda_1, \lambda_2, \lambda_3$.
+- **Transition Criteria:** The system bifurcates when:
+  $$ \frac{\lambda_3}{\lambda_2} > \frac{\lambda_4}{\lambda_3} \quad \text{and} \quad R_n > \frac{\lambda_2}{\lambda_1} + \frac{\lambda_3}{\lambda_2} $$
+  This signals that the graph cannot be accurately represented in 2D.
+
+- **3D Spectral Embedding:** Each distinction $X_i$ is mapped to a 3D spatial coordinate $(s_{i,1}, s_{i,2}, s_{i,3})$ using the eigenvectors associated with $\lambda_1, \lambda_2, \lambda_3$.
 
 #### D.4 Stage 4: The 4D Spacetime Manifold
 
 The final structure synthesizes the emergent 3D spatial manifold with the 1D temporal continuum.
 
-* Each distinction $X_i$ is an event in the 4D manifold with position:
-$$P_i = (t_i, s_{i,1}, s_{i,2}, s_{i,3})$$
-* The temporal coordinate $t_i$ is the discrete integer from the Golomb ruler.
-* The spatial coordinates $(s_{i,1}, s_{i,2}, s_{i,3})$ are continuous values derived from the spectral embedding.
+- **Stabilization Conditions:** The 4D spacetime becomes stable when:
+  $$ \frac{\lambda_4}{\lambda_3} > \frac{\lambda_3}{\lambda_2} \quad \text{and} \quad R_n > \sum_{k=1}^3 \frac{\lambda_{k+1}}{\lambda_k} $$
 
-This provides a self-contained framework where spacetime emerges dynamically from combinatorial growth and informational structure.
+- **4D Coordinates:** Each distinction $X_i$ becomes an event in the 4D manifold with position:
+  $$P_i = (t_i, s_{i,1}, s_{i,2}, s_{i,3})$$
+  where:
+  - $t_i$ is the discrete integer from the Golomb ruler (temporal coordinate)
+  - $(s_{i,1}, s_{i,2}, s_{i,3})$ are continuous values from spectral embedding
+
+**Theorem D.1** (Emergence Theorem):  
+The above transition criteria guarantee:
+
+1. **Causal Consistency**: Temporal order $t_i$ is preserved in all embeddings
+2. **Spatial Stability**: Eigenvector coordinates minimize distortion energy
+3. **Metric Compatibility**: The induced pseudo-Riemannian metric satisfies:
+   $$ ds^2 = -dt^2 + \sum_{k=1}^3 ds_k^2 + O(\ell_{\text{info}}) $$
+
+#### D.5 Unified Interpretation of Transition Conditions
+
+The intrinsic transition criteria imply three fundamental properties:
+
+Temporal Order Preservation:
+The growth rule's monotonicity (Axiom III) ensures $t_i < t_j$ is preserved in all embeddings.
+Spatial Self-Consistency:
+Eigenvector coordinates minimize the distortion energy $E_{\text{embed}} = \sum_{i<j} \left(|\mathbf{s}_i - \mathbf{s}j| - d{ij}\right)^2$.
+Continuum Compatibility:
+The induced metric approaches $ds^2 = -dt^2 + d\mathbf{s}^2$ as $n \to \infty$.
 
 ---
 
@@ -347,9 +394,9 @@ Axiom VII defines a pseudometric over distinctions:
 $$d(i,j) = \frac{1}{1 + I(X_i; X_j)}, \quad I(X_i; X_j) = \log \left(1 + \frac{1}{d_{ij}}\right), \quad d_{ij} = \frac{|x_i - x_j|}{\langle |x_k - x_l| \rangle}$$As the number of distinctions $n$ grows, the minimal distance $d_{\min}^{(n)} = \min_{i \neq j} d(i,j)$ decreases. The informational scale is:$$\ell_{\text{info}} = \frac{1}{1 + \log n}$$
 **Derivation:**
 
-* The entropy is $S_n = \binom{n}{2}$.
-* Mutual information is bounded: $I(X_i; X_j) \leq \log \binom{n}{2} \approx 2 \log n - \log 2$.
-* Thus, $\ell_{\text{info}} \approx \frac{1}{1 + 2 \log n}$.
+- The entropy is $S_n = \binom{n}{2}$.
+- Mutual information is bounded: $I(X_i; X_j) \leq \log \binom{n}{2} \approx 2 \log n - \log 2$.
+- Thus, $\ell_{\text{info}} \approx \frac{1}{1 + 2 \log n}$.
 
 **Physical Interpretation:** $\ell_{\text{info}}$ is the minimal resolvable separation, analogous to a fundamental length scale, derived purely from informational constraints.
 
@@ -360,10 +407,10 @@ $$R_n = \frac{1}{\ell_{\text{info}}^2} \left(1 - \frac{d_{\min}^{(n)}}{\ell_{\te
 **Theorem E.1:** When $R_n \geq \ell_{\text{info}}^{-2}$, the distinction graph requires a higher-dimensional embedding.
 **Proof:**
 
-* **1D Limitation:** In 1D, $\delta_{\min}^{(n)} \sim \frac{1}{n}$, so $d_{\min}^{(n)} \sim \frac{1}{1 + \log n} \to \ell_{\text{info}}$, causing $R_n \to \ell_{\text{info}}^{-2}$.
-* **2D Impossibility:** Per the Erdős–Anning theorem, infinite unique distances are impossible in $\mathbb{R}^2$.
-* **3D Sufficiency:** The Johnson–Lindenstrauss lemma ensures $n$ points can be embedded in $\mathbb{R}^3$ with minimal distortion.
-* **Minimality:** Higher dimensions offer no energetic advantage.
+- **1D Limitation:** In 1D, $\delta_{\min}^{(n)} \sim \frac{1}{n}$, so $d_{\min}^{(n)} \sim \frac{1}{1 + \log n} \to \ell_{\text{info}}$, causing $R_n \to \ell_{\text{info}}^{-2}$.
+- **2D Impossibility:** Per the Erdős–Anning theorem, infinite unique distances are impossible in $\mathbb{R}^2$.
+- **3D Sufficiency:** The Johnson–Lindenstrauss lemma ensures $n$ points can be embedded in $\mathbb{R}^3$ with minimal distortion.
+- **Minimality:** Higher dimensions offer no energetic advantage.
 
 **Physical Interpretation:** $R_n$ quantifies informational crowding, driving the transition to 3D.
 
@@ -384,8 +431,8 @@ Define:
 $$S_G = \sum_{\langle i,j \rangle} I(X_i; X_j) \cdot d(i,j)^2 + \sum_i E(X_i)$$
 where:
 
-* $d(i,j) = \frac{1}{1 + I(X_i; X_j)}$.
-* $E(X_i) = \sum_{j \in N_i} \log \left(1 + \frac{|t_i - t_j|}{d(i,j)}\right)$.
+- $d(i,j) = \frac{1}{1 + I(X_i; X_j)}$.
+- $E(X_i) = \sum_{j \in N_i} \log \left(1 + \frac{|t_i - t_j|}{d(i,j)}\right)$.
 
 The sum is over edges in $G_{\text{info}}$ with $d(i,j) \leq r$, where $r \propto \ell_{\text{info}}$.
 

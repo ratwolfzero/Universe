@@ -116,7 +116,7 @@ def compute_embedding_spacetime(G, spatial_dim=3):
 def check_transitions(G, d_min, l_info, R_n):
     """
     Check dimensional transitions based on eigenvalue ratios and curvature.
-    Removed 4D→5D transition as it’s not physically required (Appendix E.2).
+    Intrinsic conditions with zero free parameters.
     """
     n = len(G)
     if n < 10:
@@ -134,9 +134,9 @@ def check_transitions(G, d_min, l_info, R_n):
         r1 = λ2 / λ1  # 1D→2D
         r2 = λ3 / λ2  # 2D→3D
         r3 = λ4 / λ3  # 4D Spacetime Stabilization
-        transition_2D = (r1 > 1.3 and R_n > 1.3)
-        transition_3D = (r2 > 1.15 and R_n > 2.2)
-        transition_4D = (r3 > 1.01 and R_n > 3.0)
+        transition_2D = (r1 > r2 and R_n > r1)
+        transition_3D = (r2 > r3 and R_n > r1+r2)
+        transition_4D = (r3 > r2 and R_n > r1+r2+r3)
         return transition_2D, transition_3D, transition_4D, r1, r2, r3
     except Exception as e:
         print("Error in check_transitions:", e)
@@ -160,62 +160,6 @@ def plot_results(G_full, results, metrics_history):
     """
     ns, d_mins, l_infos, R_ns, r1s, r2s, r3s = metrics_history
    
-    """
-    # Plot 0: Distortion Metrics Evolution
-    distortions = []
-    alt_distortions = []
-    norm_distortions = []
-    for n in ns:
-        print(f"Processing n={n}")  # Debug print
-        if n < 2:
-            distortions.append(0.0)
-            alt_distortions.append(0.0)
-            norm_distortions.append(0.0)
-            continue
-        try:
-            G_n = G_full[:n]
-            W = compute_metrics(G_n)[3]
-            d_ij = 1 / (1 + W)
-            np.fill_diagonal(d_ij, np.inf)
-            embedding = compute_embedding(G_n, 3) if n >= results.get('3D', n) else compute_embedding(G_n, 2)
-            print(f"embedding shape for n={n}: {embedding.shape}")  # Debug shape
-            if embedding.shape[0] != n or embedding.size == 0:
-               raise ValueError(f"Invalid embedding shape {embedding.shape} for n={n}")
-            euclidean_dists = np.sqrt(np.sum((embedding[:, None] - embedding)**2, axis=2))
-            np.fill_diagonal(d_ij, 0)
-            distortion = np.mean((euclidean_dists - d_ij)**2 / (d_ij**2 + 1e-16))
-            alt_distortion = np.mean(np.abs(euclidean_dists - d_ij))
-            norm_distortion = distortion / (n * (n - 1) / 2.0)
-            distortions.append(distortion)
-            alt_distortions.append(alt_distortion)
-            norm_distortions.append(norm_distortion)
-        except Exception as e:
-            print(f"Error at n={n}: {e}")
-            distortions.append(0.0)  # Fallback value
-            alt_distortions.append(0.0)
-            norm_distortions.append(0.0)
-
-    plt.figure(figsize=(10, 6))
-    plt.plot(ns, distortions, label='Distortion (Relative Error)')
-    plt.plot(ns, alt_distortions, label='Absolute Distortion')
-    plt.plot(ns, norm_distortions, label='Normalized Distortion (per pair)')
-    if results.get('2D') is not None:
-       plt.axvline(x=results.get('2D'), color='r', linestyle=':', label=f'1D→2D at n={results.get("2D")}')
-    if results.get('3D') is not None:
-       plt.axvline(x=results.get('3D'), color='g', linestyle=':', label=f'2D→3D at n={results.get("3D")}')
-    if results.get('4D') is not None:
-       plt.axvline(x=results.get('4D'), color='b', linestyle=':', label=f'4D Stabilization at n={results.get("4D")}')
-    plt.xlabel('Number of Distinctions (n)')
-    plt.ylabel('Distortion Metrics')
-    plt.title('Evolution of Distortion Metrics')
-    plt.yscale('log')  # Log scale for small values
-    plt.grid(True)                                      
-    plt.legend()
-    plt.savefig('distortion_metrics.png')
-    plt.show()
-    plt.close()
-    """
-
     # Plot 1: Golomb Ruler Growth (Temporal Coordinate)
     plt.figure(figsize=(10, 6))
     plt.plot(range(1, len(G_full) + 1), G_full, 'o-', label='Golomb Ruler Marks (t_i)')
@@ -245,9 +189,6 @@ def plot_results(G_full, results, metrics_history):
     plt.plot(ns, r1s, label='λ₂/λ₁ (1D→2D)')
     plt.plot(ns, r2s, label='λ₃/λ₂ (2D→3D)')
     plt.plot(ns, r3s, label='λ₄/λ₃ (4D Spacetime Stabilization)')
-    plt.axhline(y=1.3, color='r', linestyle='--', label='1D→2D Threshold (1.3)')
-    plt.axhline(y=1.15, color='g', linestyle='--', label='2D→3D Threshold (1.15)')
-    plt.axhline(y=1.01, color='b', linestyle='--', label='4D Stabilization Threshold (1.01)')
     if results.get('2D') is not None:
         plt.axvline(x=results.get('2D'), color='r', linestyle=':', label=f'1D→2D at n={results.get("2D")}')
     if results.get('3D') is not None:
@@ -266,9 +207,6 @@ def plot_results(G_full, results, metrics_history):
     # Plot 4: Informational Curvature
     plt.figure(figsize=(10, 6))
     plt.plot(ns, R_ns, label='R_n')
-    plt.axhline(y=1.3, color='r', linestyle='--', label='1D→2D Threshold (1.3)')
-    plt.axhline(y=2.2, color='g', linestyle='--', label='2D→3D Threshold (2.2)')
-    plt.axhline(y=3.0, color='b', linestyle='--', label='4D Stabilization Threshold (3.0)')
     if results.get('2D') is not None:
         plt.axvline(x=results.get('2D'), color='r', linestyle=':', label=f'1D→2D at n={results.get("2D")}')
     if results.get('3D') is not None:
@@ -346,7 +284,7 @@ def plot_results(G_full, results, metrics_history):
         plt.show()
         plt.close()
 
-    # Plot 9: Comparison of First 66 Distinctions at n=66 vs. n=210
+    # Plot 9: Comparison of First 66 Distinctions at n=76 vs. n=308
     if results.get('3D') is not None and results.get('4D') is not None:
         G_3D = G_full[:results['3D']]
         G_4D = G_full[:results['4D']]
@@ -354,14 +292,14 @@ def plot_results(G_full, results, metrics_history):
         embedding_4D_subset = compute_embedding_spacetime(G_4D, spatial_dim=3)[:results['3D'], 1:4]
         fig = plt.figure(figsize=(8, 6))
         ax = fig.add_subplot(111, projection='3d')
-        ax.scatter(embedding_3D[:, 0], embedding_3D[:, 1], embedding_3D[:, 2], c='blue', label='n=66')
-        ax.scatter(embedding_4D_subset[:, 0], embedding_4D_subset[:, 1], embedding_4D_subset[:, 2], c='red', label='n=210 (first 66)')
+        ax.scatter(embedding_3D[:, 0], embedding_3D[:, 1], embedding_3D[:, 2], c='blue', label=f'n={results["3D"]}')
+        ax.scatter(embedding_4D_subset[:, 0], embedding_4D_subset[:, 1], embedding_4D_subset[:, 2], c='red', label=f'n={results["4D"]} (first {results["3D"]})')
         ax.set_xlabel('X (Eigenvector 1)')
         ax.set_ylabel('Y (Eigenvector 2)')
         ax.set_zlabel('Z (Eigenvector 3)')
-        ax.set_title('Comparison of First 66 Distinctions at n=66 vs. n=210')
+        ax.set_title(f'Comparison of First {results["3D"]} Distinctions')
         plt.legend()
-        plt.savefig('embedding_comparison_66_210.png')
+        plt.savefig('embedding_comparison.png')
         plt.show()
         plt.close()
 
@@ -388,7 +326,7 @@ def print_summary(G_full, results, metrics_history):
     # Stability Metrics Comparison
     print("\nStability Metrics Comparison:")
     print("-" * 50)
-    print(f"{'Metric':<15} | {'n=66':>10} | {'n=210':>10}")
+    print(f"{'Metric':<15} | {'n=76':>10} | {'n=308':>10}")
     print("-" * 50)
     if results["3D"] is not None and results["4D"] is not None:
         G_3D = G_full[:results["3D"]]
@@ -421,7 +359,7 @@ def print_summary(G_full, results, metrics_history):
 def print_validation(G, results):
     """
     Print validation parameters to confirm compliance with the framework.
-    Includes alternative distortion and normalized distortion metrics.
+    Updated to reflect intrinsic transition conditions.
     """
     is_valid, entropy = validate_golomb(G)
     print("\nValidation Parameters:")
@@ -453,11 +391,11 @@ def print_validation(G, results):
         euclidean_dists = np.sqrt(np.sum((embedding_2D[:, None] - embedding_2D)**2, axis=2))
         np.fill_diagonal(d_ij, 0)
         distortion = np.mean((euclidean_dists - d_ij)**2 / (d_ij**2 + 1e-16))
-        alt_distortion = np.mean(np.abs(euclidean_dists - d_ij))
+        alt_distortion = np.mean(np.abs(euclidean_dists - d_ij))      
         norm_distortion = distortion / (n * (n - 1) / 2)
         print(f"\n1D→2D Transition at n={results['2D']}:")
-        print(f" λ₂/λ₁ = {r1:.3f} (> 1.3: {'Valid' if r1 > 1.3 else 'Invalid'})")
-        print(f" R_n = {R_n:.3f} (> 1.3: {'Valid' if R_n > 1.3 else 'Invalid'})")
+        print(f" Intrinsic condition: r1 > r2 and R_n > r1: {'Valid' if (r1 > r2 and R_n > r1) else 'Invalid'}")
+        print(f" λ₂/λ₁ = {r1:.3f}, λ₃/λ₂ = {r2:.3f}, R_n = {R_n:.3f}")
         print(f" Energy Functional (Axiom V): E_n = {E_n:.3f} (>= 0: {'Valid' if E_n >= 0 else 'Invalid'})")
         print(f" Spectral Gaps (Annex H): λ₁ = {gap1:.3f}, λ₂-λ₁ = {gap2:.3f}, λ₃-λ₂ = {gap3:.3f}, λ₄-λ₃ = {gap4:.3f}")
         print(f" 2D Embedding Distortion (Annex D): {distortion:.3f}")
@@ -490,8 +428,8 @@ def print_validation(G, results):
         alt_distortion = np.mean(np.abs(euclidean_dists - d_ij))
         norm_distortion = distortion / (n * (n - 1) / 2)
         print(f"\n2D→3D Transition at n={results['3D']}:")
-        print(f" λ₃/λ₂ = {r2:.3f} (> 1.15: {'Valid' if r2 > 1.15 else 'Invalid'})")
-        print(f" R_n = {R_n:.3f} (> 2.2: {'Valid' if R_n > 2.2 else 'Invalid'})")
+        print(f" Intrinsic condition: r2 > r3 and R_n > r1+r2: {'Valid' if (r2 > r3 and R_n > r1+r2) else 'Invalid'}")
+        print(f" λ₃/λ₂ = {r2:.3f}, λ₄/λ₃ = {r3:.3f}, R_n = {R_n:.3f}, r1+r2 = {r1+r2:.3f}")
         print(f" Energy Functional (Axiom V): E_n = {E_n:.3f} (>= 0: {'Valid' if E_n >= 0 else 'Invalid'})")
         print(f" Spectral Gaps (Annex H): λ₁ = {gap1:.3f}, λ₂-λ₁ = {gap2:.3f}, λ₃-λ₂ = {gap3:.3f}, λ₄-λ₃ = {gap4:.3f}")
         print(f" 3D Embedding Distortion (Annex D): {distortion:.3f}")
@@ -524,20 +462,20 @@ def print_validation(G, results):
         alt_distortion = np.mean(np.abs(euclidean_dists - d_ij))
         norm_distortion = distortion / (n * (n - 1) / 2)
         print(f"\n4D Spacetime Stabilization at n={results['4D']}:")
-        print(f" λ₄/λ₃ = {r3:.3f} (> 1.01: {'Valid' if r3 > 1.01 else 'Invalid'})")
-        print(f" R_n = {R_n:.3f} (> 3.0: {'Valid' if R_n > 3.0 else 'Invalid'})")
+        print(f" Intrinsic condition: r3 > r2 and R_n > r1+r2+r3: {'Valid' if (r3 > r2 and R_n > r1+r2+r3) else 'Invalid'}")
+        print(f" λ₄/λ₃ = {r3:.3f}, λ₃/λ₂ = {r2:.3f}, R_n = {R_n:.3f}, r1+r2+r3 = {r1+r2+r3:.3f}")
         print(f" Energy Functional (Axiom V): E_n = {E_n:.3f} (>= 0: {'Valid' if E_n >= 0 else 'Invalid'})")
         print(f" Spectral Gaps (Annex H): λ₁ = {gap1:.3f}, λ₂-λ₁ = {gap2:.3f}, λ₃-λ₂ = {gap3:.3f}, λ₄-λ₃ = {gap4:.3f}")
         print(f" 3D Spatial Embedding Distortion (Annex D): {distortion:.3f}")
         print(f" Alternative Distortion (Absolute Error): {alt_distortion:.3f}")
         print(f" Normalized Distortion (per pair): {norm_distortion:.6f}")
         print(f" W (I_n) Summary: Max = {np.max(W):.3f}, Mean = {np.mean(W[W > 0]):.3f}")
-    print("NOTE: W (I_n) is heuristic; a Shannon derivation may adjust dimensional transitions (Appendix I, Thermodynamics).")
+    print("NOTE: All transition conditions are now intrinsic with zero free parameters.")
 
 def simulate(n_max):
     """
     Simulation with 3D spatial embedding and 4D spacetime embedding.
-    Stabilization at n=210 focuses on R_n, E_n, and spectral gaps, not just distortion.
+    Uses intrinsic transition conditions with zero free parameters.
     """
     results = {"2D": None, "3D": None, "4D": None}
     print("Generating Golomb ruler...")
@@ -575,7 +513,7 @@ def simulate(n_max):
     return results, G_full
 
 # Run simulation
-print("Starting spacetime simulation...")
+print("Starting spacetime simulation with intrinsic transition conditions...")
 results, G_full = simulate(1000)
 print("\nFinal Results:")
 print(f"1D→2D transition at n={results['2D']}")
