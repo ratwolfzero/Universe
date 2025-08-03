@@ -13,6 +13,8 @@ A formally grounded model of emergent spacetime and matter, where distinctions f
 
 **License:** Creative Commons Attribution 4.0 International
 
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.16019500.svg)](https://doi.org/10.5281/zenodo.16019500)
+
 ---
 
 ## 1. Abstract
