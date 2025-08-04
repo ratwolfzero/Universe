@@ -588,7 +588,10 @@ derived from deterministic distinction structure, and best-fit inverse power law
 
 A compelling finding from computational simulations of the growth rule is that the dimensional transitions occur at specific, predictable points. The transitions from 1D to 2D (at $n=19$), 2D to 3D (at $n=76$), and 3D to 4D spacetime (at $n=308$) are not random events. Instead, they precisely follow a deterministic recursive sequence, which can be expressed in the closed form:
 
-$$a_n = \left(18.75 + \frac{n}{4}\right) 4^n \quad \text{for } n \ge 1,$$
+$$
+\Huge
+a_n = \left(18.75 + \frac{n}{4}\right) 4^n \quad \text{for } n \ge 1,
+$$
 
 where $a_0 = 19$ is the initial condition. This sequence, governed by the number **4** and the emergent constant **18.75**, suggests that the dimensional structure of spacetime is not an arbitrary property but a highly ordered, quantized outcome of the system's irreversible informational growth. The discovery of this underlying law demonstrates how the complex, non-linear dynamics of eigenvalue spectra and informational curvature are, in fact, the macroscopic expression of a simple, elegant mathematical rule. This result strongly reinforces the central claim of this framework: that familiar physical phenomena can emerge from a fundamentally non-statistical and deterministic combinatorial substrate.
 
