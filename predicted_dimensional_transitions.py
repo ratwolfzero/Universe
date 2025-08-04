@@ -53,7 +53,7 @@ def generate_sequence_closed_form(length):
     return sequence
 
 # Example usage:
-sequence_length = 300
+sequence_length = 5
 recursive_sequence = generate_sequence(sequence_length)
 closed_form_sequence = generate_sequence_closed_form(sequence_length)
 
