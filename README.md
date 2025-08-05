@@ -604,7 +604,6 @@ points ak for k ≥ 0. Experiments with extended simulation code confirmed the n
 * Blackburn, P., de Rijke, M., & Venema, Y. (2001). Modal Logic. CUP.
 * Bloom, G.S., & Golomb, S.W. (1977). Applications of Numbered Undirected Graphs, *IEEE Proceedings*, *65*(4), 562–570.
 * Erdős, P. (1945). On sets of distances of n points. *The American Mathematical Monthly*, *52*(9), 565-566.
-* He, G., Ye, B., Gong, R., Yao, C., Liu, Z., Murch, K. W., Yao, N. Y., & Zu, C. (2025). Experimental Realization of Discrete Time Quasicrystals. *Physical Review X*, *15*(1), 011055. DOI: 10.1103/PhysRevX.15.011055.
 * Johnson, W. B., & Lindenstrauss, J. (1984). Extensions of Lipschitz mappings into a Hilbert space. *Contemporary Mathematics*, *26*, 189-206.
 * Mac Lane, S. (1971). Categories for the Working Mathematician. Springer.
 * Sorkin, R. D. (2005). Causal sets: Discrete spacetime dynamics and quantum gravity. *General Relativity and Gravitation*, *37*(7), 1117-1148.
