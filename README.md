@@ -587,6 +587,7 @@ $$a_k = \left(18.75 + \frac{k}{4}\right) 4^k \quad \text{for } k \geq 1, \quad k
 
 where $a_0 = 19$ is the initial condition. Here, $n$ represents the number of distinctions in the Golomb ruler, while $k$ indexes the transition (e.g., $k=0$ for 1D→2D, $k=1$ for 2D→3D, $k=2$ for 3D→4D). This formula, governed by the constant 18.75 and base 4, has been confirmed by full simulation for the transitions at $n=19$, $n=76$, and $n=308$, corresponding to the emergence of 2D, 3D, and 4D spacetime, respectively. The formula is an empirical fit to the simulation’s outcomes, capturing the combinatorial growth of distinctions that leads to the stabilization of 4D spacetime, consistent with the physical universe.
 This result strongly reinforces the framework’s central claim: the dimensional structure of spacetime, culminating in a stable 4D configuration, is a quantized outcome of irreversible informational growth. The ability of a simple mathematical rule to predict the complex dynamics of eigenvalue spectra and informational curvature underscores the elegance and power of the Golomb Universe’s deterministic foundation.
+
 ---
 
 ## References
