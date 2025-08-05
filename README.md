@@ -582,7 +582,7 @@ The close functional alignment between the axiomatic mutual information $I_n(i,j
 
 Figure J.1 — Functional comparison between the axiomatic mutual information $I_n(i,j) = \log\left(1 + \frac{1}{d_{ij}}\right)$, derived from deterministic distinction structure, and best-fit inverse power law and exponential decay models typical of probabilistic systems. The axiomatic curve closely tracks both fits across normalized distinction distances, suggesting that information-theoretic behaviors can emerge from non-statistical foundations.
 
-Computational simulations of the growth rule reveal that dimensional transitions occur at specific, predictable points, corresponding to the number of distinctions (marks) in the Golomb ruler. The transitions from 1D to 2D at $n=19$, 2D to 3D at $n=76$, and 3D to 4D spacetime at $n=308$ are not random events but follow a deterministic sequence. These transitions are accurately described by a closed-form formula:
+Computational simulations of the growth rule reveal that dimensional transitions occur at specific, predictable points, corresponding to the number of distinctions (marks) in the Golomb ruler. The transitions from 1D to 2D at $n=19$, 2D to 3D at $n=76$, and 3D to 4D spacetime at $n=308$ are not random events but follow a deterministic sequence. These transitions are accurately described by a closed-form formula*:
 
 $$a_k = \left( c_k + \frac{k}{4} \right) 4^k, \quad \text{where} \quad c_k = \begin{cases} 
 19 & \text{if } k = 0, \\
@@ -591,6 +591,9 @@ $$a_k = \left( c_k + \frac{k}{4} \right) 4^k, \quad \text{where} \quad c_k = \be
 
 where $k_0 = 19$ is the initial condition. Here, $n$ represents the number of distinctions in the Golomb ruler, while $k$ indexes the transition (e.g., $k=0$ for 1D→2D, $k=1$ for 2D→3D, $k=2$ for 3D→4D). This formula, governed by the constant 18.75 and base 4, has been confirmed by full simulation for the transitions at $n=19$, $n=76$, and $n=308$, corresponding to the emergence of 2D, 3D, and 4D spacetime, respectively. The formula is an empirical fit to the simulation’s outcomes, capturing the combinatorial growth of distinctions that leads to the stabilization of 4D spacetime, consistent with the physical universe.
 This result strongly reinforces the framework’s central claim: the dimensional structure of spacetime, culminating in a stable 4D configuration, is a quantized outcome of irreversible informational growth. The ability of a simple mathematical rule to predict the complex dynamics of eigenvalue spectra and informational curvature underscores the elegance and power of the Golomb Universe’s deterministic foundation.
+
+>*The empirical formula  predicts an infinite sequence of transition
+points ak for k ≥ 0. Experiments with extended simulation code confirmed the next predicted transition at a3 = 1248 but failed to produce a4 = 5096
 
 ---
 
