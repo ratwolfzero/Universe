@@ -584,7 +584,7 @@ Figure J.1 — Functional comparison between the axiomatic mutual information $I
 
 Computational simulations of the growth rule reveal that dimensional transitions occur at specific, predictable points, corresponding to the number of distinctions (marks) in the Golomb ruler. The transitions from 1D to 2D at $n=19$, 2D to 3D at $n=76$, and 3D to 4D spacetime at $n=308$ are not random events but follow a deterministic sequence. These transitions are accurately described by a closed-form formula*:
 
-$$a_k = \left( c_k + \frac{k}{4} \right) 4^k, \quad \text{where} \quad c_k = \begin{cases} 
+$$a_k = \left( c_k + \frac{k}{4} \right) 4^k, \quad \text{where} \quad c_k = \begin{cases}
 19 & \text{if } k = 0, \\
 18.75 & \text{if } k \geq 1, k \leq 2
 \end{cases}$$
@@ -593,7 +593,8 @@ where $k_0 = 19$ is the initial condition. Here, $n$ represents the number of di
 This result strongly reinforces the framework’s central claim: the dimensional structure of spacetime, culminating in a stable 4D configuration, is a quantized outcome of irreversible informational growth. The ability of a simple mathematical rule to predict the complex dynamics of eigenvalue spectra and informational curvature underscores the elegance and power of the Golomb Universe’s deterministic foundation.
 
 >*The empirical formula  predicts an infinite sequence of transition
-points ak for k ≥ 0. Experiments with extended simulation code confirmed the next predicted transition at a3 = 1248 but failed to produce a4 = 5056
+points ak for k ≥ 0. Experiments with extended simulation code confirmed the next predicted transition at a3 = 1248
+but failed to produce a4 = 5056
 
 ---
 
