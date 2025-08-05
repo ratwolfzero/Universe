@@ -55,6 +55,51 @@ pip install numpy matplotlib scipy numba tqdm
 * `temporal_spatial_projection_4D.png`
 * `embedding_comparison.png`
 
+Growth of Golomb Ruler (Temporal Dimension)
+
+Display: Shows $t_i$ to 2M at 500, per generate_golomb.
+Relation: Basis for Plots 7, 8, 9’s temporal dominance.
+
+Mutual Information Matrix at n=500
+
+Display: Correctly depicts 500x500 $W$ heatmap, with title and axes matching the full ruler.
+Relation: Drives Laplacian for Plots 3, 5-9’s embeddings.
+
+Eigenvalue Ratios for Dimensional Transitions
+
+Display: Expected to show blue ($\lambda_2/\lambda_1$) at 19, orange ($\lambda_3/\lambda_2$) at 76, green ($\lambda_4/\lambda_3$) at 308, with overlap confirming 4D.
+Relation: Guides Plots 5-9’s dimensional structures.
+
+Informational Curvature Evolution of $R_n$
+
+Display: Shows $R_n$ from 1.333 to 3.595, with transitions at 19, 76, 308.
+Relation: Supports Plot 3’s logic, influencing Plots 5-9.
+
+2D Spatial Embedding at n=76 (1D→2D)
+
+Display: Displays linear 2D scatter, matching $\lambda_2/\lambda_1 = 1.182$.
+Relation: Evolves into Plot 6, influenced by Plots 2 and 3.
+
+3D Spatial Embedding at n=76 (2D→3D)
+
+Display: Shows scattered 3D points, with $\lambda_3/\lambda_2 = 1.083$.
+Relation: Transitions to Plots 7 and 9, driven by Plots 2 and 3.
+
+3D Spatial Embedding at n=308 (4D Spacetime Stabilization)
+
+Display: Displays 3D curve, with $\lambda_4/\lambda_3 = 1.049$.
+Relation: Links to Plot 8’s correlation and Plot 9’s collapse.
+
+Temporal-Spatial Projection at n=308
+
+Display: Shows smooth $t_i$ vs. $s_{i,1}$ curve, due to $\lambda_1$ alignment.
+Relation: Complements Plot 7, influencing Plot 9.
+
+Comparison of First 76 Distinctions
+
+Display: Shows blue scatter vs. red dot, with collapse due to 4D dominance.
+Relation: Builds on Plots 6 and 7, reflecting Plot 8.
+
 ### Console Output
 
 * Progress updates
