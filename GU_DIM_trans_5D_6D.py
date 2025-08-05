@@ -11,19 +11,6 @@ def generate_golomb(n: int) -> np.ndarray:
     Generates the first n Golomb rulers using an optimized growing algorithm.
     """
     G = np.zeros(n, dtype=np.int64)
-    D_size = 1024                               
-import numpy as np
-from scipy.linalg import eigh
-from numba import njit
-from tqdm import tqdm
-
-
-@njit
-def generate_golomb(n: int) -> np.ndarray:
-    """
-    Generates the first n Golomb rulers using an optimized growing algorithm.
-    """
-    G = np.zeros(n, dtype=np.int64)
     D_size = 1024
     D = np.zeros(D_size, dtype=np.bool_)
     temp_size = 1024
@@ -66,7 +53,7 @@ def generate_golomb(n: int) -> np.ndarray:
             if valid:
                 for i in range(current_length):
                     diff = m - G[i]
-                    D[diff] = True                
+                    D[diff] = True
                 G[current_length] = m
                 current_length += 1
                 break
@@ -435,15 +422,18 @@ def print_validation(G, results):
     is_valid, entropy = validate_golomb(G)
     print("\nValidation Parameters:")
     print("-" * 80)
-    print(f"Golomb Ruler Validity (Axiom II): {'Valid' if is_valid else 'Invalid'}")
+    print(
+        f"Golomb Ruler Validity (Axiom II): {'Valid' if is_valid else 'Invalid'}")
     print(f"Entropy (S_n = n(n-1)/2, Appendix C): {entropy}")
     temporal_valid = np.all(np.diff(G) > 0)
-    print(f"Temporal Order (Axiom III, G[i] < G[i+1]): {'Valid' if temporal_valid else 'Invalid'}")
+    print(
+        f"Temporal Order (Axiom III, G[i] < G[i+1]): {'Valid' if temporal_valid else 'Invalid'}")
 
     def validate_transition(n_transition, transition_name, condition, r_values, prev_r_sum):
         G_t = G[:n_transition]
         d_min, l_info, R_n, W = compute_metrics(G_t)
-        _, _, _, _, _, r1, r2, r3, r4, r5 = check_transitions(G_t, d_min, l_info, R_n)
+        _, _, _, _, _, r1, r2, r3, r4, r5 = check_transitions(
+            G_t, d_min, l_info, R_n)
         n = len(G_t)
         d_ij = 1 / (1 + W)
         np.fill_diagonal(d_ij, np.inf)
@@ -459,54 +449,71 @@ def print_validation(G, results):
         gap4 = λ4 - λ3
         gap5 = λ5 - λ4
         gap6 = λ6 - λ5
-        embedding = compute_embedding(G_t, 3) if transition_name in ["2D", "3D"] else compute_embedding_spacetime(G_t, spatial_dim=3)[:, 1:4]
-        euclidean_dists = np.sqrt(np.sum((embedding[:, None] - embedding)**2, axis=2))
+        embedding = compute_embedding(G_t, 3) if transition_name in [
+            "2D", "3D"] else compute_embedding_spacetime(G_t, spatial_dim=3)[:, 1:4]
+        euclidean_dists = np.sqrt(
+            np.sum((embedding[:, None] - embedding)**2, axis=2))
         np.fill_diagonal(d_ij, 0)
         distortion = np.mean((euclidean_dists - d_ij)**2 / (d_ij**2 + 1e-16))
         alt_distortion = np.mean(np.abs(euclidean_dists - d_ij))
         norm_distortion = distortion / (n * (n - 1) / 2)
         print(f"\n{transition_name} Transition at n={n_transition}:")
-        print(f" Intrinsic condition: {condition}: {'Valid' if eval(condition) else 'Invalid'}")
-        print(f" {', '.join(f'λ{i+2}/λ{i+1} = {r:.3f}' for i, r in enumerate(r_values))}, R_n = {R_n:.3f}, prev_r_sum = {prev_r_sum:.3f}")
-        print(f" Energy Functional (Axiom V): E_n = {E_n:.3f} (>= 0: {'Valid' if E_n >= 0 else 'Invalid'})")
-        print(f" Spectral Gaps (Annex H): λ₁ = {gap1:.3f}, λ₂-λ₁ = {gap2:.3f}, λ₃-λ₂ = {gap3:.3f}, λ₄-λ₃ = {gap4:.3f}, λ₅-λ₄ = {gap5:.3f}, λ₆-λ₅ = {gap6:.3f}")
+        print(
+            f" Intrinsic condition: {condition}: {'Valid' if eval(condition) else 'Invalid'}")
+        print(f" {', '.join(f'λ{i+2}/λ{i+1} = {r:.3f}' for i, r in enumerate(r_values))
+                  }, R_n = {R_n:.3f}, prev_r_sum = {prev_r_sum:.3f}")
+        print(
+            f" Energy Functional (Axiom V): E_n = {E_n:.3f} (>= 0: {'Valid' if E_n >= 0 else 'Invalid'})")
+        print(
+            f" Spectral Gaps (Annex H): λ₁ = {gap1:.3f}, λ₂-λ₁ = {gap2:.3f}, λ₃-λ₂ = {gap3:.3f}, λ₄-λ₃ = {gap4:.3f}, λ₅-λ₄ = {gap5:.3f}, λ₆-λ₅ = {gap6:.3f}")
         print(f" Embedding Distortion (Annex D): {distortion:.3f}")
-        print(f" Alternative Distortion (Absolute Error): {alt_distortion:.3f}")
+        print(
+            f" Alternative Distortion (Absolute Error): {alt_distortion:.3f}")
         print(f" Normalized Distortion (per pair): {norm_distortion:.6f}")
-        print(f" W (I_n) Summary: Max = {np.max(W):.3f}, Mean = {np.mean(W[W > 0]):.3f}")
+        print(
+            f" W (I_n) Summary: Max = {np.max(W):.3f}, Mean = {np.mean(W[W > 0]):.3f}")
 
     # Validate 1D→2D transition
     if results["2D"] is not None:
         G_t = G[:results["2D"]]
-        _, _, _, _, _, r1, r2, r3, r4, r5 = check_transitions(G_t, *compute_metrics(G_t)[:3])
-        validate_transition(results["2D"], "1D→2D", "r1 > r2 and R_n > r1", [r1, r2, r3, r4, r5], r1)
+        _, _, _, _, _, r1, r2, r3, r4, r5 = check_transitions(
+            G_t, *compute_metrics(G_t)[:3])
+        validate_transition(results["2D"], "1D→2D", "r1 > r2 and R_n > r1", [
+                            r1, r2, r3, r4, r5], r1)
 
     # Validate 2D→3D transition
     if results["3D"] is not None:
         G_t = G[:results["3D"]]
-        _, _, _, _, _, r1, r2, r3, r4, r5 = check_transitions(G_t, *compute_metrics(G_t)[:3])
-        validate_transition(results["3D"], "2D→3D", "r2 > r3 and R_n > r1+r2", [r1, r2, r3, r4, r5], r1 + r2)
+        _, _, _, _, _, r1, r2, r3, r4, r5 = check_transitions(
+            G_t, *compute_metrics(G_t)[:3])
+        validate_transition(
+            results["3D"], "2D→3D", "r2 > r3 and R_n > r1+r2", [r1, r2, r3, r4, r5], r1 + r2)
 
     # Validate 4D Spacetime Stabilization
     if results["4D"] is not None:
         G_t = G[:results["4D"]]
-        _, _, _, _, _, r1, r2, r3, r4, r5 = check_transitions(G_t, *compute_metrics(G_t)[:3])
-        validate_transition(results["4D"], "4D Spacetime Stabilization", "r3 > r2 and R_n > r1+r2+r3", [r1, r2, r3, r4, r5], r1 + r2 + r3)
+        _, _, _, _, _, r1, r2, r3, r4, r5 = check_transitions(
+            G_t, *compute_metrics(G_t)[:3])
+        validate_transition(results["4D"], "4D Spacetime Stabilization",
+                            "r3 > r2 and R_n > r1+r2+r3", [r1, r2, r3, r4, r5], r1 + r2 + r3)
 
     # Validate D5 Transition
     if results["D5"] is not None:
         G_t = G[:results["D5"]]
-        _, _, _, _, _, r1, r2, r3, r4, r5 = check_transitions(G_t, *compute_metrics(G_t)[:3])
-        validate_transition(results["D5"], "D5", "r4 > r3 and R_n > r1+r2+r3+r4", [r1, r2, r3, r4, r5], r1 + r2 + r3 + r4)
+        _, _, _, _, _, r1, r2, r3, r4, r5 = check_transitions(
+            G_t, *compute_metrics(G_t)[:3])
+        validate_transition(results["D5"], "D5", "r4 > r3 and R_n > r1+r2+r3+r4", [
+                            r1, r2, r3, r4, r5], r1 + r2 + r3 + r4)
 
     # Validate D6 Transition
     if results["D6"] is not None:
         G_t = G[:results["D6"]]
-        _, _, _, _, _, r1, r2, r3, r4, r5 = check_transitions(G_t, *compute_metrics(G_t)[:3])
-        validate_transition(results["D6"], "D6", "r5 > r4 and R_n > r1+r2+r3+r4+r5", [r1, r2, r3, r4, r5], r1 + r2 + r3 + r4 + r5)
+        _, _, _, _, _, r1, r2, r3, r4, r5 = check_transitions(
+            G_t, *compute_metrics(G_t)[:3])
+        validate_transition(results["D6"], "D6", "r5 > r4 and R_n > r1+r2+r3+r4+r5", [
+                            r1, r2, r3, r4, r5], r1 + r2 + r3 + r4 + r5)
 
     print("NOTE: All transition conditions are intrinsic with zero free parameters.")
-
 
 
 def simulate(n_max):
@@ -552,8 +559,10 @@ def simulate(n_max):
                 tqdm.write(
                     f"Progress: n={n}, d_min={d_min:.3f}, l_info={l_info:.3f}, R_n={R_n:.3f}")
 
-    plot_results(G_full, results, (ns, d_mins, l_infos, R_ns, r1s, r2s, r3s, r4s, r5s))
-    print_summary(G_full, results, (ns, d_mins, l_infos, R_ns, r1s, r2s, r3s, r4s, r5s))
+    plot_results(G_full, results, (ns, d_mins, l_infos,
+                 R_ns, r1s, r2s, r3s, r4s, r5s))
+    print_summary(G_full, results, (ns, d_mins, l_infos,
+                  R_ns, r1s, r2s, r3s, r4s, r5s))
     print_validation(G_full, results)
     return results, G_full
 
