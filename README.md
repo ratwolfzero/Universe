@@ -601,6 +601,9 @@ Experiments with extended simulation code confirmed the next predicted transitio
 
 Highly Speculative Remark: The transition at n = 1248 might mark the beginning of further refinements to the 4D structure, potentially initiating a sequence of subtle evolutionary stages beyond stabilization. These could involve unknown properties or interactions emerging from the infinite distinction process, though their nature remains unclear and requires extensive future investigation.
 
+![Header Image](./Documentation/informational_curvature.png)
+![Header Image](./Documentation/eigenvalue_ratios.png)
+
 ---
 
 ## References
