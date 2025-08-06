@@ -598,7 +598,7 @@ This result strongly reinforces the framework’s central claim: the dimensional
 
 >*The empirical formula  predicts an infinite sequence of transition points ak for k ≥ 0.  
 Experiments with extended simulation code confirmed the next predicted transition at k3 = 1248  
-but failed to produce k4 = 5056
+but failed to produce k4 = 5056. Highly Speculative Remark: The transition at $ n = 1248 $ might mark the beginning of further refinements to the 4D structure, potentially initiating a sequence of subtle evolutionary stages beyond stabilization. These could involve unknown properties or interactions emerging from the infinite distinction process, though their nature remains unclear and requires extensive future investigation.
 
 ---
 
