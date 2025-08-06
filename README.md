@@ -576,7 +576,7 @@ $$\lambda_k \sim \frac{1}{\ell_{\text{info}}^2} \cdot \left(1 - \frac{\langle I(
 
 ---
 
-### Appendix J: Conclusion (Part II, Appendix E -I)
+### Appendix J: Conclusion (Part II, Appendix E-I)
 
 This axiomatic framework derives spacetime, curvature, and quantum structure from informational principles, with $\ell_{\text{info}}$ as the fundamental scale. The approach maintains the Golomb Universe’s minimalism while offering testable predictions, paving the way for a unified theory of quantum gravity. From distinctions alone, the universe weaves its geometry and dynamics—one irreducible difference at a time.
 
@@ -597,7 +597,8 @@ where $k_0 = 19$ is the initial condition. Here, $n$ represents the number of di
 This result strongly reinforces the framework’s central claim: the dimensional structure of spacetime, culminating in a stable 4D configuration, is a quantized outcome of irreversible informational growth. The ability of a simple mathematical rule to predict the complex dynamics of eigenvalue spectra and informational curvature underscores the elegance and power of the Golomb Universe’s deterministic foundation.
 
 >*The empirical formula  predicts an infinite sequence of transition points ak for k ≥ 0.  
-Experiments with extended simulation code confirmed the next predicted transition at k3 = 1248 but failed to produce k4 = 5056.
+Experiments with extended simulation code confirmed the next predicted transition at k3 = 1248. 
+but failed to produce k4 = 5056.
 
 Highly Speculative Remark: The transition at n = 1248 might mark the beginning of further refinements to the 4D structure, potentially initiating a sequence of subtle evolutionary stages beyond stabilization. These could involve unknown properties or interactions emerging from the infinite distinction process, though their nature remains unclear and requires extensive future investigation.
 
