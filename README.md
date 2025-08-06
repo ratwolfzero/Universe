@@ -604,6 +604,7 @@ but failed to produce k4 = 5056.
 
 ![Header Image](./Documentation/informational_curvature.png)
 ![Header Image](./Documentation/eigenvalue_ratios.png)
+![Header Image](./Documentation/mutual_information_matrix.svg)
 
 ---
 
