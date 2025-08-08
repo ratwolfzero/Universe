@@ -605,7 +605,7 @@ but failed to produce k4 = 5056.
 >Eigenvector analysis across n=19, 76, 308, 1248, 5056 reveals:
 
 >Spectral Transitions:
-Eigenvalue ratios ($r_1 = \lambda_2 / \lambda_1$, etc.) and curvature $R_n$ drive dimensional transitions at $n=19 $ (2D, $ r_1 = 2.154$), $n=76$ (3D, $r_2 = 1.234$), $n=308$ (4D, $r_3 = 1.456$), and $n=1248$ (D5, $r_4 = 1.456$), but not at n=5056$ (D6, $r_5 = 1.198 < r_4 = 1.432$).
+Eigenvalue ratios ($r_1 = \lambda_2 / \lambda_1$, etc.) and curvature $R_n$ drive dimensional transitions at $n=19$ (2D, $r_1 = 2.154$), $n=76$ (3D, $r_2 = 1.234$), $n=308$ (4D, $r_3 = 1.456$), and $n=1248$ (D5, $r_4 = 1.456$), but not at n=5056$ (D6, $r_5 = 1.198 < r_4 = 1.432$).
 
 >Eigenvector Patterns:
 Low-order eigenvectors ($v_1$ to $v_5$) have monotonic components with high correlations (0.987–0.995) to the Golomb ruler, supporting the 3D embedding ($v_1, v_2, v_3$). $v_5$ at $n=1248$ refines the structure (correlation = -0.995).
