@@ -602,18 +602,18 @@ but failed to produce k4 = 5056.
 
 >Highly Speculative Remark: The transition at n = 1248 might mark the beginning of further refinements to the 4D structure, potentially initiating a sequence of subtle evolutionary stages beyond stabilization. These could involve unknown properties or interactions emerging from the infinite distinction process, though their nature remains unclear and requires extensive future investigation.
 
->Eigenvector analysis across $ n=19, 76, 308, 1248, 5056 $ reveals:
+>Eigenvector analysis across n=19, 76, 308, 1248, 5056 reveals:
 
->### Spectral Transitions:
-Eigenvalue ratios ($ r_1 = \lambda_2 / \lambda_1 $, etc.) and curvature $ R_n $ drive dimensional transitions at $ n=19 $ (2D, $ r_1 = 2.154 $), $ n=76 $ (3D, $ r_2 = 1.234 $), $ n=308 $ (4D, $ r_3 = 1.456 $), and $ n=1248 $ (D5, $ r_4 = 1.456 $), but not at $ n=5056 $ (D6, $ r_5 = 1.198 < r_4 = 1.432 $).
+>Spectral Transitions:
+Eigenvalue ratios ($r_1 = \lambda_2 / \lambda_1$, etc.) and curvature $ R_n $ drive dimensional transitions at $ n=19 $ (2D, $ r_1 = 2.154 $), $ n=76 $ (3D, $ r_2 = 1.234 $), $ n=308 $ (4D, $ r_3 = 1.456 $), and $ n=1248 $ (D5, $ r_4 = 1.456 $), but not at $ n=5056 $ (D6, $ r_5 = 1.198 < r_4 = 1.432 $).
 
->### Eigenvector Patterns:
+>Eigenvector Patterns:
 Low-order eigenvectors ($ v_1 $ to $ v_5 $) have monotonic components with high correlations (0.987–0.995) to the Golomb ruler, supporting the 3D embedding ($ v_1, v_2, v_3 $). $ v_5 $ at $ n=1248 $ refines the structure (correlation = -0.995).
 
->### D6 Absence:
+>D6 Absence:
 The dense spectrum at $ n=5056 $ (5056 eigenvalues, smaller gaps) prevents a D6 transition, as $ v_6 $ does not introduce a new structural feature.
 
->### Implication:
+>Implication:
 The analysis confirms the model’s ability to encode the Golomb ruler’s structure spectrally, with transitions up to D5 refining the embedding
 
 ![Header Image](./Documentation/informational_curvature.png)
