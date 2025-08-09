@@ -613,10 +613,10 @@ Eigenvalue ratios ($r_1 = \lambda_2 / \lambda_1$, etc.) and curvature $R_n$ driv
 Low-order eigenvectors ($v_1$ to $v_5$) have monotonic components with high correlations (0.987–0.995) to the Golomb ruler, supporting the 3D embedding ($v_1, v_2, v_3$). $v_5$ at $n=1248$ refines the structure (correlation = -0.995).
 
 >D6 Absence:
-The dense spectrum at $n=5056$ (5056 eigenvalues, smaller gaps) prevents a D6 transition, as $v_6$ does not introduce a new structural feature.
+The dense eigenvalue spectrum at $n=5056$ (5056 eigenvalues, smaller gaps) prevents a D6 transition, as \( $v_6$ \) (correlation = -0.995) refines existing patterns rather than introducing new structural features.
 
 >Implication:
-The analysis confirms the model’s ability to encode the Golomb ruler’s structure spectrally, with transitions up to D5 refining the embedding
+The analysis confirms the model’s ability to spectrally encode the Golomb ruler’s structure, with transitions up to D5 aligning with a 3+1D-like embedding suitable for the observed universe. The absence of a D6 transition is consistent with no need for higher macroscopic dimensions, but the heuristic nature of the model’s metrics limits its direct physical applicability.
 
 ![Header Image](./Documentation/informational_curvature.png)
 ![Header Image](./Documentation/eigenvalue_ratios.png)
