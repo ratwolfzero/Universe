@@ -212,9 +212,9 @@ Hence, Golomb rulers minimize total energy under the constraint of maximal pairw
 
 ---
 
-## 8. Conclusion
+## 8.Summary
 
-This work introduces a novel axiomatic approach to quantum gravity and fundamental physics, wherein physical reality emerges as a combinatorial unfolding of distinctions. The growth rule derived from logical axioms produces structures akin to greedy Golomb rulers, encoding time, space, and energy as emergent properties. The model is falsifiable, structurally minimal, and unifies logic with physical interpretation in a background-free, deterministic framework.
+The Golomb Universe is a background-free, deterministic model where spacetime, energy, and matter emerge from the irreversible generation of irreducible distinctions. Guided by a single combinatorial rule, it produces greedy Golomb ruler structures whose spectra drive dimensional transitions, stabilizing in 3+1D and offering a parameter-free, falsifiable blueprint for physical reality.
 
 The following appendices provide supporting context and detailed derivations. Appendices A-C formalize the growth rule and its properties, while Appendix D onwards further develops the framework, detailing the emergence of 4D spacetime and quantum structure.
 
