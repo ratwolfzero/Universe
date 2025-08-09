@@ -353,7 +353,7 @@ This measure grows monotonically with $n$, reflecting increasing structural comp
 
 ---
 
-### Appendix D: Mathematically Rigorous Concept for 4D Spacetime Emergence
+### Appendix D: Concept for 4D Spacetime Emergence
 
 The transition from a 1D combinatorial sequence to a 4D spacetime is an emergent process rooted in the growing informational complexity of the system, as formalized by Axiom VII. This process is defined through a series of structural bifurcations driven by the eigenvalue spectrum of the Graph Laplacian and informational curvature.
 
