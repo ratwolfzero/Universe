@@ -377,7 +377,7 @@ where
 
 $$d_{ij} = \frac{|x_i - x_j|}{\langle |x_k - x_l| \rangle}$$
 
-The informational graph $G_{\text{info}}$, being dense or locally connected, naturally contains cycles of lengths including powers of 2, consistent with graph-theoretic properties like the Erdős conjecture, without affecting the model’s combinatorial or physical predictions.
+The informational graph $G_{\text{info}}$, being dense or locally connected, naturally contains cycles of lengths including powers of 2, consistent with graph-theoretic properties like the Erdős–Gyárfás conjecture, without affecting the model’s falsifiability, which relies on the absence of repeated pairwise differences in the Golomb ruler structure.
 
 **Graph Laplacian:**
 
