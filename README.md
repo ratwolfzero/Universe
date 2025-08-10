@@ -212,7 +212,7 @@ Hence, Golomb rulers minimize total energy under the constraint of maximal pairw
 
 ---
 
-## 8.Summary
+## 8. Summary
 
 The Golomb Universe is a background-free, deterministic model where spacetime, energy, and matter emerge from the irreversible generation of irreducible distinctions. Guided by a single combinatorial rule, it produces greedy Golomb ruler structures whose spectra drive dimensional transitions, stabilizing in 3+1D and offering a parameter-free, falsifiable blueprint for physical reality.
 
