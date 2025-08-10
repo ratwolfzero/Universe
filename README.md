@@ -600,9 +600,9 @@ $$a_k = \left( c_k + \frac{k}{4} \right) 4^k, \quad \text{where} \quad c_k = \be
 where $k_0 = 19$ is the initial condition. Here, $n$ represents the number of distinctions in the Golomb ruler, while $k$ indexes the transition (e.g., $k=0$ for 1D→2D, $k=1$ for 2D→3D, $k=2$ for 3D→4D). This formula, governed by the constant 18.75 and base 4, has been confirmed by full simulation for the transitions at $n=19$, $n=76$, and $n=308$, corresponding to the emergence of 2D, 3D, and 4D spacetime, respectively. The formula is an empirical fit to the simulation’s outcomes, capturing the combinatorial growth of distinctions that leads to the stabilization of 4D spacetime, consistent with the physical universe.
 This result strongly reinforces the framework’s central claim: the dimensional structure of spacetime, culminating in a stable 4D configuration, is a quantized outcome of irreversible informational growth. The ability of a simple mathematical rule to predict the complex dynamics of eigenvalue spectra and informational curvature underscores the elegance and power of the Golomb Universe’s deterministic foundation.
 
->*The empirical formula  predicts an infinite sequence of transition points ak for k ≥ 0.  
+>*This empirical formula  predicts an infinite sequence of transition points ak for k ≥ 0.  
 Experiments with extended simulation code confirmed the next predicted transition at k3 = 1248,
-but failed to produce k4 = 5056.
+but failed to produce k4 = 5056 (simulated up to n_max=5100).
 
 >Highly Speculative Remark: The transition at n = 1248 might mark the beginning of further refinements to the 4D structure, potentially initiating a sequence of subtle evolutionary stages beyond stabilization. These could involve unknown properties or interactions emerging from the infinite distinction process, though their nature remains unclear and requires extensive future investigation.
 
