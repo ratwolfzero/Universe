@@ -377,6 +377,8 @@ where
 
 $$d_{ij} = \frac{|x_i - x_j|}{\langle |x_k - x_l| \rangle}$$
 
+The informational graph $G_{\text{info}}$, being dense or locally connected, naturally contains cycles of lengths including powers of 2, consistent with graph-theoretic properties like the Erdős conjecture, without affecting the model’s combinatorial or physical predictions.
+
 **Graph Laplacian:**
 
 Analyze the structure via the Graph Laplacian matrix, $L = D - I_n$, where $D$ is the degree matrix and $I_n$ is the mutual information matrix. The eigenvalues of $L$ encode the dimensionality: $0 = \lambda_0 \leq \lambda_1 \leq \lambda_2 \leq \cdots \leq \lambda_n$.
