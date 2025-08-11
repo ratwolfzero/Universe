@@ -617,14 +617,9 @@ Low-order eigenvectors ($v_1$ to $v_5$) have monotonic components with high corr
 >D6 Absence:
 The dense eigenvalue spectrum at $n=5056$ (5056 eigenvalues, smaller gaps) prevents a D6 transition, as \( $v_6$ \) (correlation = -0.995) refines existing patterns rather than introducing new structural features.
 
->Implication:
-You're absolutely right—adding this latest insight to Annex J would nicely streamline the model's implications for the universe's origin, tying together our analysis of the pre-geometric phase and the spectral transitions. Here's how we can integrate it as an additional statement, keeping it concise and aligned with the paper's style:
-
 ---
 
 ### Annex J: Additional Notes and Open Research Topics
-
-[...]
 
 The analysis confirms the model’s ability to spectrally encode the Golomb ruler’s structure, with transitions up to D5 (n=1248) aligning with a 3+1D-like embedding suitable for the observed universe. The absence of a D6 transition (beyond n=5056) is consistent with no need for higher macroscopic dimensions, suggesting the model may capture a pre-geometric origin evolving into stabilized spacetime. However, the heuristic nature of the model’s metrics (e.g., mutual information $I_n$ and curvature $R_n$) limits its direct physical applicability, leaving open questions about scaling to physical constants and empirical validation.
 
