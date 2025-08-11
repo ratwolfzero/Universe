@@ -144,30 +144,7 @@ Each step adds a minimal integer $m$ such that all new pairwise differences are 
 
 ---
 
-## 4. Emergent Physical Quantities
-
-### 4.1 Quantities
-
-| **Quantity**  | **Interpretation**                                                          |
-| ------------- | --------------------------------------------------------------------------- |
-| **Time**      | Defined by the ordering of morphisms: $A \prec_t B$                         |
-| **Space**     | Emergent from relative distinctions; modeled as relational independence     |
-| **Entropy**   | Number of distinctions: $S_n = \binom{n}{2}$                                |
-| **Energy**    | Cost of uniqueness: $E(X) \propto \text{number of new differences in } X$   |
-| **Matter**    | Stable substructures within $\mathcal{C}$ that preserve distinction locally |
-| **Causality** | Irreversible morphism chains without cycles                                 |
-
-### 4.2 Matter Subclasses
-
-| **Component**         | **Interpretation**                                                         |
-| --------------------- | -------------------------------------------------------------------------- |
-| **Dark Matter**       | Stable but causally or observationally isolated substructures              |
-| **Observable Matter** | Substructures with sufficient internal symmetry to interact or couple      |
-| **Dark Energy**       | Residual capacity for distinction—unused potential, not a substance per se |
-
----
-
-## 5. Energetic Optimality of Golomb Growth
+## 4. Energetic Optimality of Golomb Growth
 
 Let $S = {x_0, x_1, \ldots, x_n}$, with $x_i \prec x_j$ for $i < j$, and define:
 
@@ -179,6 +156,29 @@ $$\forall i < j, \forall k < l, \quad D_{ij} \ne D_{kl}\Rightarrow E(S) = \sum_{
 \quad f \text{ strictly decreasing}$$
 
 Hence, Golomb rulers minimize total energy under the constraint of maximal pairwise distinctiveness.
+
+---
+
+## 5. Emergent Physical Quantities
+
+### 5.1 Quantities
+
+| **Quantity**  | **Interpretation**                                                          |
+| ------------- | --------------------------------------------------------------------------- |
+| **Time**      | Defined by the ordering of morphisms: $A \prec_t B$                         |
+| **Space**     | Emergent from relative distinctions; modeled as relational independence     |
+| **Entropy**   | Number of distinctions: $S_n = \binom{n}{2}$                                |
+| **Energy**    | Cost of uniqueness: $E(X) \propto \text{number of new differences in } X$   |
+| **Matter**    | Stable substructures within $\mathcal{C}$ that preserve distinction locally |
+| **Causality** | Irreversible morphism chains without cycles                                 |
+
+### 5.2 Matter Subclasses
+
+| **Component**         | **Interpretation**                                                         |
+| --------------------- | -------------------------------------------------------------------------- |
+| **Dark Matter**       | Stable but causally or observationally isolated substructures              |
+| **Observable Matter** | Substructures with sufficient internal symmetry to interact or couple      |
+| **Dark Energy**       | Residual capacity for distinction—unused potential, not a substance per se |
 
 ---
 
