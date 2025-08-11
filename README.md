@@ -580,7 +580,7 @@ $$\lambda_k \sim \frac{1}{\ell_{\text{info}}^2} \cdot \left(1 - \frac{\langle I(
 
 ---
 
-### Appendix J: Conclusion (Appendix E-I)
+### Appendix J: Conclusion
 
 This axiomatic framework derives spacetime, curvature, and quantum structure from informational principles, with $\ell_{\text{info}}$ as the fundamental scale. The approach maintains the Golomb Universe’s minimalism while offering testable predictions, paving the way for a unified theory of quantum gravity. From distinctions alone, the universe weaves its geometry and dynamics—one irreducible difference at a time.
 
