@@ -85,7 +85,7 @@ def main(n_max: int, output_dir: str):
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser(description="Golomb Ruler Mutual Information Matrix Simulation")
-    parser.add_argument('--n_max', type=int, default=6000, help='Maximum number of distinctions (default: 100)')
+    parser.add_argument('--n_max', type=int, default=3000, help='Maximum number of distinctions (default: 100)')
     parser.add_argument('--output_dir', type=str, default='results', help='Directory to save plots (default: ./results)')
     args = parser.parse_args()
 
