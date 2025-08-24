@@ -1,11 +1,11 @@
 import matplotlib.pyplot as plt
 import numpy as np
-from numba import njit, prange
+from numba import njit
 import argparse
 import os             
 
 
-@njit(parallel=True)
+@njit
 def generate_golomb(n: int) -> np.ndarray:
     if n <= 0:
         return np.zeros(0, dtype=np.float64)  # Match return type to float64
@@ -29,7 +29,7 @@ def generate_golomb(n: int) -> np.ndarray:
                     valid = False
                     break
             if valid:
-                for i in prange(current_length):
+                for i in range(current_length):
                     diff = m - G[i]
                     D[diff] = True
                 G[current_length] = m                  
